@@ -1,0 +1,2332 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+  <link rel="preload" href="fonts/open-sans-v18-latin_cyrillic-regular.woff2" as="font">
+  <link rel="preload" href="fonts/open-sans-v18-latin_cyrillic-600.woff2" as="font">
+  <link rel="preload" href="fonts/open-sans-v18-latin_cyrillic-700.woff2" as="font">
+
+  <link rel="stylesheet" href="css/simplebar.css">
+  <link rel="stylesheet" href="css/choices.min.css">
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="css/jquery-ui.min.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="css/media.min.css">
+
+  <title>Blanchard - художественная галерея</title>
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__box">
+      <div class="header__top-bg">
+        <div class="container header__top-container">
+          <form action="#nav" class="header__burger">
+            <button aria-label="Открыть навигацию по сайту" class="burger__btn">
+              <span></span>
+            </button>
+          </form>
+          <picture class="header__logo">
+            <source srcset="/img/logo-320.webp" type="image/webp" media="(max-width: 685px)">
+            <source srcset="/img/logo-1024.webp" type="image/webp" media="(max-width: 1100px)">
+            <source srcset="/img/logo.webp" type="image/webp">
+            <img src="/img/logo.webp" alt="Blanchard - художественная галерея">
+          </picture>
+          <nav class="header__nav">
+            <ul id="nav" class="nav__list">
+              <li class="nav__item">
+                <a href="#about" class="nav__link">О&nbsp;нас</a>
+              </li>
+              <li class="nav__item">
+                <a href="#gallery" class="nav__link">Галерея</a>
+              </li>
+              <li class="nav__item">
+                <a href="#catalog" class="nav__link">Каталог</a>
+              </li>
+              <li class="nav__item">
+                <a href="#events" class="nav__link">События</a>
+              </li>
+              <li class="nav__item">
+                <a href="#publications" class="nav__link">Издания</a>
+              </li>
+              <li class="nav__item">
+                <a href="#projects" class="nav__link">Проекты</a>
+              </li>
+              <li class="nav__item">
+                <a href="#contacts" class="nav__link">Контакты</a>
+              </li>
+            </ul>
+            <a href="#" class="header__login-mob">Войти</a>
+          </nav>
+          <a href="#" class="header__login">Войти</a>
+          <form action="https://jsonplaceholder.typicode.com/posts" method="GET" id="search"
+            class="header__search-mobile">
+            <button aria-label="Кнопка поиска" class="search-mobile__btn"></button>
+            <input aria-label="Поле ввода поиска" type="search" placeholder="Поиск..." class="search-mobile__input">
+          </form>
+          <button aria-label="Кнопка открытия поиска" class="search-mobile__btn-open"></button>
+        </div>
+      </div>
+      <div class="header__bottom-bg">
+        <div class="container header__bottom-container">
+          <nav class="bottom__menu">
+            <ul class="bottom__list">
+              <li class="bottom__item">
+                <button aria-label="Кнопка открытия списка художников реалистов"
+                  class="bottom__btn dropdown__btn-1">Реализм
+                </button>
+                <ul class="dropdown__list dd-1" data-simplebar>
+                  <li class="dropdown__item item-1"><a class="dropdown__link" href="#">Тинторетто</a></li>
+                  <li class="dropdown__item item-2"><a class="dropdown__link" href="#">Фридрих</a></li>
+                  <li class="dropdown__item item-3"><a class="dropdown__link" href="#">Леонардо</a></li>
+                  <li class="dropdown__item item-4"><a class="dropdown__link" href="#">Верроккьо</a></li>
+                  <li class="dropdown__item item-1"><a class="dropdown__link" href="#">Тинторетто</a></li>
+                  <li class="dropdown__item item-2"><a class="dropdown__link" href="#">Фридрих</a></li>
+                </ul>
+              </li>
+              <li class="bottom__item">
+                <button aria-label="Кнопка открытия списка художников импрессионистов"
+                  class="bottom__btn dropdown__btn-2">Импрессионизм
+                </button>
+                <ul class="dropdown__list dd-2" data-simplebar>
+                  <li class="dropdown__item item-5"><a class="dropdown__link" href="#">Моне</a></li>
+                  <li class="dropdown__item item-6"><a class="dropdown__link" href="#">Сислей</a></li>
+                  <li class="dropdown__item item-7"><a class="dropdown__link" href="#">Мане</a></li>
+                  <li class="dropdown__item item-8"><a class="dropdown__link" href="#">Ренуар</a></li>
+                </ul>
+              </li>
+              <li class="bottom__item">
+                <button aria-label="Кнопка открытия списка художников постимпрессионистов"
+                  class="bottom__btn dropdown__btn-3">Постимпрессионизм
+                </button>
+                <ul class="dropdown__list dd-3" data-simplebar>
+                  <li class="dropdown__item item-9"><a class="dropdown__link" href="#">Ван Гог</a></li>
+                  <li class="dropdown__item item-10"><a class="dropdown__link" href="#">Сезанн</a></li>
+                  <li class="dropdown__item item-11"><a class="dropdown__link" href="#">Гоген</a></li>
+                  <li class="dropdown__item item-12"><a class="dropdown__link" href="#">Сёра</a></li>
+                </ul>
+              </li>
+              <li class="bottom__item">
+                <button aria-label="Кнопка открытия списка художников авангардистов"
+                  class="bottom__btn dropdown__btn-4">Авангард
+                </button>
+                <ul class="dropdown__list dd-4" data-simplebar>
+                  <li class="dropdown__item item-13"><a class="dropdown__link" href="#">Кандинский</a></li>
+                  <li class="dropdown__item item-14"><a class="dropdown__link" href="#">Маринетти</a></li>
+                  <li class="dropdown__item item-15"><a class="dropdown__link" href="#">Малевич</a></li>
+                  <li class="dropdown__item item-16"><a class="dropdown__link" href="#">Пикассо</a></li>
+                </ul>
+              </li>
+              <li class="bottom__item">
+                <button aria-label="Кнопка открытия списка художников футуристов"
+                  class="bottom__btn dropdown__btn-5">Футуризм
+                </button>
+                <ul class="dropdown__list dd-5" data-simplebar>
+                  <li class="dropdown__item item-17"><a class="dropdown__link" href="#">Карра</a></li>
+                  <li class="dropdown__item item-18"><a class="dropdown__link" href="#">Прателла</a></li>
+                  <li class="dropdown__item item-19"><a class="dropdown__link" href="#">Северини</a></li>
+                  <li class="dropdown__item item-20"><a class="dropdown__link" href="#">Балла</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <form action="https://jsonplaceholder.typicode.com/posts" method="GET" class="header__search">
+            <button aria-label="Кнопка поиска" class="search__btn"></button>
+            <input aria-label="Поле ввода поиска" type="search" placeholder="Поиск по сайту" class="search__input">
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="hero">
+      <div class="hero__bg">
+        <div class="container">
+          <div class="hero__atop">
+            <h1 class="hero__heading">Прикоснитесь к&nbsp;прекрасному</h1>
+            <p class="hero__desc">
+              Мы вынуждены отталкиваться от того, что реализация намеченных плановых заданий создаёт предпосылки для
+              новых предложений.
+            </p>
+            <a href="#subscription" class="hero__link">Подписаться на рассылку</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="about">
+      <div class="container about__container">
+        <h2 class="about__heading title">О нас</h2>
+        <p class="about__desc">
+          Ясность нашей позиции очевидна: семантический разбор внешних противодействий однозначно определяет каждого
+          участника как способного принимать собственные решения касаемо распределения внутренних резервов и
+          ресурсов. Не следует, однако, забывать, что высококачественный прототип будущего проекта влечет за собой
+          процесс внедрения и модернизации модели развития. Повседневная практика показывает, что высокое качество
+          позиционных исследований создаёт необходимость включения в производственный план целого ряда внеочередных
+          мероприятий с учётом комплекса распределения внутренних резервов и ресурсов. В рамках спецификации
+          современных стандартов, действия представителей оппозиции набирают популярность среди определенных слоев
+          населения, а значит, должны быть разоблачены.
+        </p>
+      </div>
+    </section>
+    <section id="gallery" class="gallery">
+      <div class="gallery__bg">
+        <div class="container gallery__container">
+          <div class="gallery__box">
+            <div class="gallery__info">
+              <h2 class="title gallery__title">Галерея</h2>
+              <form action="#" class="gallery__filter">
+                <fieldset class="gallery__fieldset">
+                  <legend class="gallery__legend">Фильтровать по:</legend>
+                  <select aria-label="Выбор пункта фильтрации" name="select" id="filter" class="gallery__select">
+                    <option>Автор</option>
+                    <option value="">Направление</option>
+                    <option value="">Техника</option>
+                  </select>
+                </fieldset>
+              </form>
+            </div>
+            <p class="gallery__note">Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества
+              скачиваний <a href="#" class="gallery__login">авторизуйтесь,</a> либо воспользуйтесь лицензией.</p>
+          </div>
+          <div class="gallery__slider">
+            <div class="slider swiper-container">
+              <div class="slider__top">
+                <div class="slider__btn-prev swiper-button-prev"></div>
+                <div class="slider__pag swiper-pagination"></div>
+                <div class="slider__btn-next swiper-button-next"></div>
+              </div>
+              <div class="swiper-wrapper">
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-1-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-1-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-1-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-1.webp" type="image/webp">
+                  <img data-src="/img/sl1-1.webp" alt="Картинка" class="lazyload">
+                </picture>
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-16-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-16-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-16-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-16.webp" type="image/webp">
+                  <img data-src="/img/sl1-16.webp" alt="Картинка" class="lazyload">
+                </picture>
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-2-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-2-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-2-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-2.webp" type="image/webp">
+                  <img data-src="/img/sl1-2.webp" alt="Картинка" class="lazyload">
+                </picture>
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-17-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-17-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-17-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-17.webp" type="image/webp">
+                  <img data-src="/img/sl1-17.webp" alt="Картинка" class="lazyload">
+                </picture>
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-3-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-3-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-3-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-3.webp" type="image/webp">
+                  <img data-src="/img/sl1-3.webp" alt="Картинка" class="lazyload">
+                </picture>
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-18-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-18-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-18-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-18.webp" type="image/webp">
+                  <img data-src="/img/sl1-18.webp" alt="Картинка" class="lazyload">
+                </picture>
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-4-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-4-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-4-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-4.webp" type="image/webp">
+                  <img data-src="/img/sl1-4.webp" alt="Картинка" class="lazyload">
+                </picture>
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-19-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-19-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-19-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-19.webp" type="image/webp">
+                  <img data-src="/img/sl1-19.webp" alt="Картинка" class="lazyload">
+                </picture>
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-5-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-5-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-5-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-5.webp" type="image/webp">
+                  <img data-src="/img/sl1-5.webp" alt="Картинка" class="lazyload">
+                </picture>
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-20-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-20-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-20-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-20.webp" type="image/webp">
+                  <img data-src="/img/sl1-20.webp" alt="Картинка" class="lazyload">
+                </picture>
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-6-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-6-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-6-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-6.webp" type="image/webp">
+                  <img data-src="/img/sl1-6.webp" alt="Картинка" class="lazyload">
+                </picture>
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-21-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-21-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-21-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-21.webp" type="image/webp">
+                  <img data-src="/img/sl1-21.webp" alt="Картинка" class="lazyload">
+                </picture>
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-7-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-7-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-7-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-7.webp" type="image/webp">
+                  <img data-src="/img/sl1-7.webp" alt="Картинка" class="lazyload">
+                </picture>
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-22-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-22-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-22-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-22.webp" type="image/webp">
+                  <img data-src="/img/sl1-22.webp" alt="Картинка" class="lazyload">
+                </picture>
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-8-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-8-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-8-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-8.webp" type="image/webp">
+                  <img data-src="/img/sl1-8.webp" alt="Картинка" class="lazyload">
+                </picture>
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-23-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-23-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-23-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-23.webp" type="image/webp">
+                  <img data-src="/img/sl1-23.webp" alt="Картинка" class="lazyload">
+                </picture>
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-9-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-9-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-9-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-9.webp" type="image/webp">
+                  <img data-src="/img/sl1-9.webp" alt="Картинка" class="lazyload">
+                </picture>
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-24-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-24-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-24-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-24.webp" type="image/webp">
+                  <img data-src="/img/sl1-24.webp" alt="Картинка" class="lazyload">
+                </picture>
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-10-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-10-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-10-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-10.webp" type="image/webp">
+                  <img data-src="/img/sl1-10.webp" alt="Картинка" class="lazyload">
+                </picture>
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-25-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-25-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-25-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-25.webp" type="image/webp">
+                  <img data-src="/img/sl1-25.webp" alt="Картинка" class="lazyload">
+                </picture>
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-11-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-11-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-11-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-11.webp" type="image/webp">
+                  <img data-src="/img/sl1-11.webp" alt="Картинка" class="lazyload">
+                </picture>
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-26-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-26-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-26-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-26.webp" type="image/webp">
+                  <img data-src="/img/sl1-26.webp" alt="Картинка" class="lazyload">
+                </picture>
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-12-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-12-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-12-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-12.webp" type="image/webp">
+                  <img data-src="/img/sl1-12.webp" alt="Картинка" class="lazyload">
+                </picture>
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-27-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-27-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-27-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-27.webp" type="image/webp">
+                  <img data-src="/img/sl1-27.webp" alt="Картинка" class="lazyload">
+                </picture>
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-13-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-13-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-13-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-13.webp" type="image/webp">
+                  <img data-src="/img/sl1-13.webp" alt="Картинка" class="lazyload">
+                </picture>
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-28-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-28-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-28-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-28.webp" type="image/webp">
+                  <img data-src="/img/sl1-28.webp" alt="Картинка" class="lazyload">
+                </picture>
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-14-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-14-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-14-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-14.webp" type="image/webp">
+                  <img data-src="/img/sl1-14.webp" alt="Картинка" class="lazyload">
+                </picture>
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-29-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-29-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-29-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-29.webp" type="image/webp">
+                  <img data-src="/img/sl1-29.webp" alt="Картинка" class="lazyload">
+                </picture>
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-15-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-15-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-15-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-15.webp" type="image/webp">
+                  <img data-src="/img/sl1-15.webp" alt="Картинка" class="lazyload">
+                </picture>
+                <picture class="swiper-slide slider__pic">
+                  <source data-srcset="/img/sl1-30-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/sl1-30-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/sl1-30-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/sl1-30.webp" type="image/webp">
+                  <img data-src="/img/sl1-30.webp" alt="Картинка" class="lazyload">
+                </picture>
+              </div>
+            </div>
+          </div>
+          <p class="gallery__note-768">Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества
+            скачиваний <a href="#" class="gallery__login">авторизуйтесь,</a> либо воспользуйтесь лицензией.</p>
+        </div>
+      </div>
+    </section>
+    <section id="catalog" class="catalog">
+      <div class="container catalog__container">
+        <div class="catalog__top">
+          <h2 class="title">Каталог</h2>
+          <ul class="catalog__list-flag">
+            <li class="catalog__item-flag">
+              <button aria-label="Франция" class="catalog__btn-flag btn-fr" data-path="fr"></button>
+            </li>
+            <li class="catalog__item-flag">
+              <button aria-label="Германия" class="catalog__btn-flag btn-de" data-path="de"></button>
+            </li>
+            <li class="catalog__item-flag">
+              <button aria-label="Италия" class="catalog__btn-flag btn-it tab-active" data-path="it"></button>
+            </li>
+            <li class="catalog__item-flag">
+              <button aria-label="Россия" class="catalog__btn-flag btn-ru" data-path="ru"></button>
+            </li>
+            <li class="catalog__item-flag">
+              <button aria-label="Бельгия" class="catalog__btn-flag btn-bel" data-path="bel"></button>
+            </li>
+          </ul>
+        </div>
+        <p class="catalog__desc">
+          Акционеры крупнейших компаний, которые представляют собой яркий пример континентально-европейского типа
+          политической культуры, будут объявлены нарушающими общечеловеческие нормы этики и морали. Являясь всего лишь
+          частью общей картины, стремящиеся вытеснить традиционное производство, нанотехнологии и по сей день остаются
+          уделом либералов, которые жаждут быть функционально разнесены на независимые элементы.
+        </p>
+        <div class="flag-content" data-target="fr">
+          <!-- Artist of France -->
+          <div class="artist-info artist-info-fr" data-target="fuke">
+            <picture class="artist__picture">
+              <source data-srcset="/img/fuke-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/fuke-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/fuke-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/fuke.webp" type="image/webp">
+              <img src="/img/fuke.webp" alt="Фуке, Жан" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Фуке, Жан</h3>
+            <p class="artist__lived">ок. 1420 — 1481.</p>
+            <p class="artist__about">Французский живописец, первый мастер французского Возрождения, портретист и
+              миниатюрист, глава Турской школы.</p>
+          </div>
+          <div class="artist-info" data-target="esden">
+            <picture class="artist__picture">
+              <source data-srcset="/img/esden-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/esden-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/esden-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/esden.webp" type="image/webp">
+              <img src="/img/esden.webp" alt="Жакмар де Эсден" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Жакмар де Эсден</h3>
+            <p class="artist__lived">ок. 1355 — ок. 1414.</p>
+            <p class="artist__about">Французский художник-миниатюрист, работавший в стиле интернациональной готики.
+            </p>
+          </div>
+          <div class="acc">
+            <h3 class="acc__period">С 1400 по 1499 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn acc__btn-fr"
+                    data-path="fuke">Фуке,
+                    Жан
+                  </button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn" data-path="esden">Жакмар де
+                    Эсден
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 1500 по 1599 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 1600 по 1699 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 1700 по 1799 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 1800 по 1899 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 1900 по 1999 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 2000 г.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="flag-content" data-target="de">
+          <div class="artist-info artist-info-de" data-target="burgkmaer">
+            <picture class="artist__picture">
+              <source data-srcset="/img/burgkmaer-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/burgkmaer-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/burgkmaer-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/burgkmaer.webp" type="image/webp">
+              <img src="/img/burgkmaer.webp" alt="Бургкмайр, Ханс" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Бургкмайр, Ханс</h3>
+            <p class="artist__lived">1473 — 1431.</p>
+            <p class="artist__about">Немецкий художник, гравер и скульптор. Ханс Бургкмайр родился в 1473 году в
+              городе Аугсбурге; происходил из семьи художников. Первоначальное обучение он прошёл у своего отца,
+              художника Томана Бургкмайра (1444—1523). С 1488 по 1490 год Бургкмайр проходил обучение в Кольмаре в
+              Эльзасе у Мартина Шонгауэра. Не исключено, что в годы странствий он доехал из Аугсбурга до Кёльна. Около
+              1507 года художник побывал в Италии, где его привлекло творчество Карло Кривелли и Витторе Карпаччо.
+              Ханс Бургкмайр привлекался неоднократно к работам самим императором Максимилианом I (иллюстрование
+              романа Theuerdank) и пользовался большой славой как у себя в Аугсбурге, так и за его пределами.</p>
+          </div>
+          <div class="artist-info" data-target="witz">
+            <picture class="artist__picture">
+              <source data-srcset="/img/witz-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/witz-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/witz-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/witz.webp" type="image/webp">
+              <img src="/img/witz.webp" alt="Виц, Конрад" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Виц, Конрад</h3>
+            <p class="artist__lived">ок. 1400 — 1445/1446.</p>
+            <p class="artist__about">Немецкий и швейцарский художник. Считается одним из основоположников искусства
+              Северного Возрождения. Предполагается, что Конрад Виц родился в Ротвайле около 1400 года. О его жизни до
+              1431 года, когда художник переехал в Базель, ничего не известно. В 1434 году он вошёл в гильдию
+              художников Базеля, а в следующем году стал гражданином этого города. Возможно, Виц либо учился у
+              нидерландских мастеров, либо совершил путешествие в Нидерланды, так как в его произведениях
+              прослеживается влияние художников этой страны. Весьма вероятны также контакты с бургундской скульптурной
+              школой, в том числе знакомство с творчеством Клауса Слютера. В 1444 году, по приглашению членов
+              Базельского Собора, кардинала Франсуа де Миса, епископа Женевского, Конрад Виц приехал в Женеву, где
+              исполнил картину для главного алтаря в соборе Святого Петра.</p>
+          </div>
+          <div class="acc">
+            <h3 class="acc__period">С 1400 по 1499 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn acc__btn-de"
+                    data-path="burgkmaer">
+                    Бургкмайр, Ханс
+                  </button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn" data-path="witz">Виц, Конрад
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 1500 по 1599 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 1600 по 1699 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 1700 по 1799 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 1800 по 1899 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 1900 по 1999 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 2000 г.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="flag-content tab-active" data-target="it">
+          <!-- Artists of Italy -->
+          <div class="artist-info artist-info-it" data-target="dibindo">
+            <picture class="artist__picture">
+              <source data-srcset="/img/dibindo-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/dibindo-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/dibindo-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/dibindo.webp" type="image/webp">
+              <img src="/img/dibindo.webp" alt="картина Бенедетто ди Биндо" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Бенедетто ди Биндо</h3>
+            <p class="artist__lived">1380-е — 19 сентября 1417.</p>
+            <p class="artist__about">Бенедетто ди Биндо остался в истории искусства как сиенский художник, так
+              сказать, «второго ряда», несмотря на то, что за свою короткую жизнь он выполнил ряд весьма престижных
+              заказов, включая работы в Сиенском соборе (работы в главном соборе республики второстепенным художникам
+              не поручались). Обучение он прошёл у Таддео ди Бартоло, крупного сиенского мастера поздней готики, в
+              боттеге которого Бенедетто трудился вместе с Грегорио ди Чекко. Наибольшее влияние на его творчество
+              оказали работы Симоне Мартини, в частности в выборе колорита, а тонко проработанные лица его персонажей
+              напоминают произведения Джованни да Милано.</p>
+          </div>
+          <div class="artist-info" data-target="bergonione">
+            <picture class="artist__picture">
+              <source data-srcset="/img/bergonione-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/bergonione-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/bergonione-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/bergonione.webp" type="image/webp">
+              <img src="/img/bergonione.webp" alt="картина Бергоньоне, Амброджо" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Бергоньоне, Амброджо</h3>
+            <p class="artist__lived">1453 — 1523.</p>
+            <p class="artist__about">Прозвище говорит о его тяготении к бургундской школе, по манере ему близок
+              Винченцо Фоппа. Испытал влияние Леонардо да Винчи. Наиболее известен работами 1486—1494 в монастырской
+              обители картезианцев Чертоза ди Павия. Позднее работал в Милане в базилике Сант-Эусторджо и церкви
+              Сан-Сатиро, после 1497 — в Лоди, в 1512 — в Бергамо, незадолго до смерти — снова в Милане, в базилике
+              Сан-Симпличано.Работы Бергоньоне представлены в музеях Бергамо, Милана (пинакотека Брера, музей
+              Польди-Пеццоли), Турина, Парижа, Лондона, Нью-Йорка и др., одно из его полотен (Иаков Зеведеев, ок.
+              1500) находится в Эрмитаже.</p>
+          </div>
+          <div class="artist-info" data-target="bisolo">
+            <picture class="artist__picture">
+              <source data-srcset="/img/bisolo-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/bisolo-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/bisolo-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/bisolo.webp" type="image/webp">
+              <img src="/img/bisolo.webp" alt="картина Биссоло, Франческо" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Биссоло, Франческо</h3>
+            <p class="artist__lived">1470 или 1472 — 20 апреля 1554.</p>
+            <p class="artist__about">Сын художника. Ученик Джованни Беллини. С 1490 переехал в мастерскую Беллини. С
+              1492 по 1530 год работал в Венеции. Помогал учителю в работе над украшением Большого зала Совета Дворца
+              дожей (Венеция). Принимал участие в создании украшений Церкви Иль Реденторе в Венеции. Художник эпохи
+              Возрождения. В своём творчестве подражал Джорджоне. Работы художника хранятся ныне во многих музеях
+              мира. В санкт-петербургском Эрмитаже находится его картина «Богоматерь с Младенцем Христом». В
+              Британской Национальной галерее — «Мадонна с Младенцем со святыми и донатором». Ряд его полотен
+              находится в музеях Варшавы, Лос-Анджелеса (Музей Нортона Саймона и Los Angeles County Museum of Art),
+              Дэйтоновском институте искусств (штат Огайо, США) и др.</p>
+          </div>
+          <div class="artist-info" data-target="boltrafio">
+            <picture class="artist__picture">
+              <source data-srcset="/img/boltrafio-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/boltrafio-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/boltrafio-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/boltrafio.webp" type="image/webp">
+              <img src="/img/boltrafio.webp" alt="картина Больтраффио, Джованни" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Больтраффио, Джованни</h3>
+            <p class="artist__lived">1466 или 1467 — 1516.</p>
+            <p class="artist__about">Вазари сообщает, что художник происходил из аристократической семьи. Воспитанный
+              в традициях Фоппы, Бернардо Дзенале и Амброджо Бергоньоне, он прошёл обучение в мастерской Леонардо. Его
+              первое произведение «Воскресение Христа, святой Леонард и святая Лючия» выполнено в 1491 году совместно
+              с Марко д'Оджоно для миланской церкви Сан-Джованни-сул-Муро. Был придворным художником Лодовико Моро и
+              славился своими психологическими портретами. Больтраффио умер в возрасте 49 лет и был похоронен на
+              кладбище церкви Св. Паулы в Комито. Некоторые искусствоведы предполагают, что фигура младенца на картине
+              Леонардо да Винчи «Мадонна Литта» принадлежит кисти Джованни Антонио Больтраффио. Известны
+              подготовительные рисунки Джованни Антонио Больтраффио, в точности воспроизводящие эту фигуру.</p>
+          </div>
+          <div class="artist-info" data-target="bonsiniori">
+            <picture class="artist__picture">
+              <source data-srcset="/img/bonsiniori-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/bonsiniori-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/bonsiniori-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/bonsiniori.webp" type="image/webp">
+              <img src="/img/bonsiniori.webp" alt="картина Бонсиньори, Франческо" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Бонсиньори, Франческо</h3>
+            <p class="artist__lived">1460 — 2 июля 1519.</p>
+            <p class="artist__about">Бонсиньори был превосходным портретистом. Уже в ранних картинах этого жанра,
+              таких, как «Портрет сенатора» из Национальной галереи, заметен индивидуальный почерк художника. Он
+              оставил после себя многочисленные портреты современников, включая портрет римского папы Льва X 1514
+              года. Бонсиньори умер в Кальдьеро близ Вероны 12 июля 1519 года, во время лечения в термах Юноны.</p>
+          </div>
+          <div class="artist-info" data-target="botichini">
+            <picture class="artist__picture">
+              <source data-srcset="/img/botichini-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/botichini-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/botichini-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/botichini.webp" type="image/webp">
+              <img src="/img/botichini.webp" alt="картина Боттичини, Рафаэлло" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Боттичини, Рафаэлло</h3>
+            <p class="artist__lived">11 сентября 1477 — 1520.</p>
+            <p class="artist__about">Рафаэлло принадлежал к флорентийской артистической династии — его дед, Джованни
+              ди Доменико, был известен как художник, расписывавший игральные карты (хотя учёные не исключают, что он
+              мог заниматься и более серьёзной живописью); его отец — Франческо ди Джованни, был известным
+              флорентийским мастером. Первые художественные навыки Рафаэлло получил в мастерской отца; с этой
+              мастерской связан и ранний период его творчества. В 1490-е годы, когда формировался художественный вкус
+              Рафаэлло, мастерская его отца занималась в основном исполнением заказов в провинциальных городках в
+              окрестностях Флоренции. В 1498 году Франческо Боттичини скончался, Рафаэлло унаследовал мастерскую и
+              продолжил работать в провинции. По мнению исследователей его творчества, это был художник скромного
+              дарования, никогда не стремившийся завоевать высоких позиций в интеллектуальном и финансовом центре
+              Тосканы — Флоренции, и довольствовавшийся заказами, которые ему давали провинциальные храмы. Его
+              искусство было эклектичным, и наряду с влиянием отца включало связь с искусством Перуджино, Ридольфо
+              Гирландайо, Лоренцо ди Креди, Фра Бартоломео и др.</p>
+          </div>
+          <div class="artist-info" data-target="bramantino">
+            <picture class="artist__picture">
+              <source data-srcset="/img/bramantino-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/bramantino-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/bramantino-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/bramantino.webp" type="image/webp">
+              <img src="/img/bramantino.webp" alt="картина Брамантино" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Брамантино</h3>
+            <p class="artist__lived">1465 — 1530.</p>
+            <p class="artist__about">В Милане, где «царил» Леонардо, Брамантино создал яркий, острый стиль, хотя и
+              страдавший иногда недостатками в передаче перспективы и неточностью изображения архитектурных элементов.
+              Брамантино сформировался под влиянием Бутиноне и графического стиля Падуи и Феррары. Впоследствии он
+              многому научился у Браманте, у которого долгое время состоял помощником (чем и объясняется его прозвище
+              Брамантино — букв. «Маленький Браманте») и у которого перенял любовь к монументальным формам и
+              драматизму. Некоторые искусствоведы полагают, что Браманте поручал Брамантино, как живописцу,
+              осуществление своих замыслов. В зрелый период своего творчества, когда были выполнены шпалеры для
+              созданного им мавзолея Тривульцио, художник придерживался строгой композиционной уравновешенности.
+              Переехав в Рим в 1508 году, где он расписывал лоджии в Ватикане, Брамантино начал работать в новой
+              манере, близкой к маньеристскому стилю.</p>
+          </div>
+          <div class="artist-info" data-target="brea">
+            <picture class="artist__picture">
+              <source data-srcset="/img/brea-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/brea-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/brea-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/brea.webp" type="image/webp">
+              <img src="/img/brea.webp" alt="картина Бреа, Людовико" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Бреа, Людовико</h3>
+            <p class="artist__lived">1450 — 1523.</p>
+            <p class="artist__about">Ренессансный художник итало-лигурийского происхождения, работы которого в
+              основном сосредоточены в прибрежных городах современных Лигурии (Италия) и восточной части Приморских
+              Альп (Франция)</p>
+          </div>
+          <div class="artist-info" data-target="tuchi">
+            <picture class="artist__picture">
+              <source data-srcset="/img/tuchi-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/tuchi-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/tuchi-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/tuchi.webp" type="image/webp">
+              <img src="/img/tuchi.webp" alt="картина Бьяджо д’Антонио Туччи" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Бьяджо д’Антонио Туччи</h3>
+            <p class="artist__lived">1446 — 1 июня 1516.</p>
+            <p class="artist__about">Итальянский художник эпохи Возрождения. Его творчество было вдохновлено работами
+              Филиппо Липпи, Андреа Верроккьо, Доменико Гирландайо.</p>
+          </div>
+          <div class="artist-info" data-target="vekieta">
+            <picture class="artist__picture">
+              <source data-srcset="/img/vekieta-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/vekieta-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/vekieta-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/vekieta.webp" type="image/webp">
+              <img src="/img/vekieta.webp" alt="картина Веккьетта" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Веккьетта</h3>
+            <p class="artist__lived">ок. 1410 — 6 июня 1480.</p>
+            <p class="artist__about">Итальянский художник, скульптор, архитектор и ювелир. Сиенская школа. О Веккьетте
+              сообщает в своих «Жизнеописаниях» Джорджо Вазари и описывает его как человека мрачного и нелюдимого,
+              вечно погружённого в раздумья, и потому прожившего недолго. Позднейшие исследователи пытались имя этого
+              художника увязать с какими-либо архивными данными. Сейчас общепризнанной считается версия, что описанный
+              Вазари Веккьетта — это Лоренцо ди Пьетро ди Джованни, который был крещён в Сиене в 1410 году. Имя этого
+              человека появляется в документах в 1428 году среди членов гильдии художников Сиены.</p>
+          </div>
+          <div class="artist-info" data-target="verokiu">
+            <picture class="artist__picture">
+              <source data-srcset="/img/verokiu-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/verokiu-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/verokiu-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/verokiu.webp" type="image/webp">
+              <img src="/img/verokiu.webp" alt="картина Андреа Верроккьо" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Андреа Верроккьо</h3>
+            <p class="artist__lived">1435 — 10 октября 1488.</p>
+            <p class="artist__about">Скульптор и живописец эпохи Возрождения, представитель Флорентийской школы. Среди
+              его учеников — Сандро Боттичелли, Пьетро Перуджино, Леонардо да Винчи и Лоренцо ди Креди. Андреа дель
+              Верроккьо родился и работал во Флоренции. Своё имя (del Verrocchio — «от Верроккьо»), он получил от
+              своего учителя, ювелира Верроккьо. Специализировался на скульптуре, но также обращался и к живописи.</p>
+          </div>
+          <div class="artist-info tab-active" data-target="girlandayo">
+            <picture class="artist__picture">
+              <source data-srcset="/img/girlandayo-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/girlandayo-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/girlandayo-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/girlandayo.webp" type="image/webp">
+              <img src="/img/girlandayo.webp" alt="картина Доменико Гирландайо" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Доменико Гирландайо</h3>
+            <p class="artist__lived">2 июня 1448 — 11 января 1494.</p>
+            <p class="artist__about">Один из ведущих флорентийских художников Кватроченто, основатель художественной
+              династии, которую продолжили его брат Давид и сын Ридольфо. Глава художественной мастерской, где юный
+              Микеланджело в течение года овладевал профессиональными навыками. Автор фресковых циклов, в которых
+              выпукло, со всевозможными подробностями показана домашняя жизнь библейских персонажей (в их роли
+              выступают знатные граждане Флоренции в костюмах того времени).</p>
+          </div>
+          <div class="artist-info" data-target="gozoli">
+            <picture class="artist__picture">
+              <source data-srcset="/img/gozoli-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/gozoli-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/gozoli-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/gozoli.webp" type="image/webp">
+              <img src="/img/gozoli.webp" alt="картина Беноццо Гоццоли" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Беноццо Гоццоли</h3>
+            <p class="artist__lived">1420 — 1497.</p>
+            <p class="artist__about">Итальянский художник, автор многочисленных циклов фресок, представитель
+              флорентийской школы живописи. Беноццо Гоццоли родился в 1420 году во Флоренции, в семье портного.
+              Настоящее имя художника — Беноццо ди Лезе ди Сандро (фамилия Гоццоли впервые появляется лишь во втором
+              издании «Жизнеописаний» Вазари). Самостоятельная творческая деятельность Беноццо Гоццоли началась в
+              1450-е годы. Он известен в основном как автор многочисленных фресок, из которых самая знаменитая —
+              роспись Капеллы волхвов в Палаццо Медичи-Риккарди во Флоренции. Эта фреска изображает шествие волхвов и
+              представляет собой единую композицию, занимающую три стены небольшой капеллы. Фреска изобилует тщательно
+              выписанными деталями: волхвы с многочисленной свитой, всадники в роскошных одеждах, деревья, животные,
+              птицы, замки, монастыри, рощи, скалы и т. д. Несмотря на определённую идеализацию образов, в участниках
+              шествия принято видеть изображения реальных исторических лиц, в том числе членов семьи Медичи. На
+              картине художник изобразил и самого себя: это человек в красной шапке с надписью Opus Benotii,
+              устремивший пристальный взгляд на зрителя.</p>
+          </div>
+          <div class="artist-info" data-target="granachi">
+            <picture class="artist__picture">
+              <source data-srcset="/img/granachi-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/granachi-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/granachi-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/granachi.webp" type="image/webp">
+              <img src="/img/granachi.webp" alt="картина Граначчи, Франческо" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Граначчи, Франческо</h3>
+            <p class="artist__lived">23 июля 1469 — 30 ноября 1543.</p>
+            <p class="artist__about">Франческо Граначчи учился в мастерской Доменико Гирландайо и помогал ему в
+              написании его картин, используя вместо темперы масляные краски. По заказу Лоренцо Медичи Граначчи
+              участвовал в росписи флорентийского Сан-Марко. Позднее он работал с Леонардо да Винчи, Микеланджело и
+              Рафаэлем.</p>
+          </div>
+          <div class="artist-info" data-target="cheko">
+            <picture class="artist__picture">
+              <source data-srcset="/img/cheko-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/cheko-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/cheko-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/cheko.webp" type="image/webp">
+              <img src="/img/cheko.webp" alt="картина Грегорио ди Чекко" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Грегорио ди Чекко</h3>
+            <p class="artist__lived">известен с 1418 г. по 1424 г.</p>
+            <p class="artist__about">О Грегорио очень мало сведений. Известно, что он был приёмным сыном и учеником
+              Таддео ди Бартоло, работал в его мастерской, а единственным достоверным произведением является алтарь,
+              написанный им в 1423 году для капеллы Франческо Толомеи в сиенском соборе, на котором стоит его подпись.
+              В начале XX века его путали с упоминаемым в документах Джорджо ди Кеко ди Лука (Giorgio di Checo di
+              Lucha), поскольку Миланези в 1853 году неправильно транскрибировал имя Грегорио.</p>
+          </div>
+          <div class="artist-info" data-target="udine">
+            <picture class="artist__picture">
+              <source data-srcset="/img/udine-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/udine-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/udine-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/udine.webp" type="image/webp">
+              <img src="/img/udine.webp" alt="картина Джованни да Удине" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Джованни да Удине</h3>
+            <p class="artist__lived">1487 - 1561.</p>
+            <p class="artist__about">Итальянский живописец, архитектор и декоратор. Учился сначала у Джованни Мартино
+              (итал. Pellegrino da San Daniele) в Удине, затем переехал в Венецию, где стал учеником Джорджоне. В 1514
+              году переехал в Рим, где поступил в мастерскую Рафаэля и считался одним из наиболее талантливых его
+              учеников. Джорджо Вазари отмечал его стремление к гротеску и большую любовь к изображению природы — как
+              растений и животных, так и неодушевлённых предметов. После смерти Рафаэля работал на кардинала Джулио
+              Медичи (будущего папу Климента VII) по украшению Вилла Мадама, завершив работу к 1525 году; находился в
+              конфликте с Джулио Романо. С 1521 по 1522 год работал во Флоренции, затем вернулся в Рим, в 1527 году
+              покинул его, вернувшись в Удине, где стал архитектором и участвовал в восстановлении местного замка
+              (итал. Castello di Udine), разрушенного сильным землетрясением 1511 года. В 1532 году ненадолго ездил во
+              Флоренцию. В 1547 году создал лестницу с внешнего двора в этом замке. В 1560 году вернулся в Рим и
+              остаток жизни провёл в бедности. Был похоронен в Пантеоне, рядом с Рафаэлем.</p>
+          </div>
+          <div class="artist-info" data-target="paolo">
+            <picture class="artist__picture">
+              <source data-srcset="/img/paolo-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/paolo-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/paolo-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/paolo.webp" type="image/webp">
+              <img src="/img/paolo.webp" alt="картина Джованни ди Паоло" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Джованни ди Паоло</h3>
+            <p class="artist__lived">1403 - 1582.</p>
+            <p class="artist__about">Итальянский художник эпохи кватроченто, один из самых значительных последователей
+              сиенской школы живописи. Его произведениям присущи повышенная экспрессия, вплоть до экзальтации, и
+              причудливая фантазия.</p>
+          </div>
+          <div class="artist-info" data-target="djordjone">
+            <picture class="artist__picture">
+              <source data-srcset="/img/djordjone-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/djordjone-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/djordjone-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/djordjone.webp" type="image/webp">
+              <img src="/img/djordjone.webp" alt="картина Джорджоне" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Джорджоне</h3>
+            <p class="artist__lived">1477/1478 — 1510.</p>
+            <p class="artist__about">Итальянский художник, представитель венецианской школы живописи; один из
+              величайших мастеров Высокого Возрождения. Джорджоне родился в небольшом городке Кастельфранко-Венето
+              недалеко от Венеции. В 1493 перебрался в Венецию и стал учеником Джованни Беллини. В 1497 появилась его
+              первая самостоятельная работа — «Христос, Несущий Крест». Согласно Вазари, в апреле 1500 встречался с
+              Леонардо да Винчи. В 1504 исполнил в родном городе Кастельфранко заказанный ему алтарный образ «Мадонна
+              Кастельфранко», предназначенный для семейной часовни Святого Георгия в местном соборе, чтобы увековечить
+              память Маттео Костанцо. По распоряжению Сената республики в 1507—1508 привлекался к фресковым росписям
+              Немецкого подворья (сохранился фрагмент с изображением женской фигуры), работы были завершены, как об
+              этом свидетельствует официальный документ, 14 декабря 1508. Умер в октябре-ноябре 1510 года от чумы.</p>
+          </div>
+          <div class="artist-info" data-target="parentino">
+            <picture class="artist__picture">
+              <source data-srcset="/img/parentino-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/parentino-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/parentino-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/parentino.webp" type="image/webp">
+              <img src="/img/parentino.webp" alt="картина Парентино, Бернардо" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Парентино, Бернардо</h3>
+            <p class="artist__lived">1450 — 1500.</p>
+            <p class="artist__about">Итальянский художник эпохи Ренессанса. В основном работал в Падуе. Родился в
+              городе Паренцо, принадлежащем венецианской республике и находящимся на побережье полуострова Истрия. Там
+              же, вероятнее всего, получил начальное образование. Умер в городе Виченца. Испытал сильное влияние, а
+              возможно и был учеником Андреа Мантеньи. Также художник известен под именами Бернардо Паренцано,
+              Бернардо да Паренцо, Бернардино Парентино. Ошибочно отождествлялся с августинским монахом Лоренцо.</p>
+          </div>
+          <div class="artist-info" data-target="pezelino">
+            <picture class="artist__picture">
+              <source data-srcset="/img/pezelino-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/pezelino-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/pezelino-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/pezelino.webp" type="image/webp">
+              <img src="/img/pezelino.webp" alt="картина Пезеллино" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Пезеллино</h3>
+            <p class="artist__lived">ок. 1422 — 1457.</p>
+            <p class="artist__about">Художник прожил короткую жизнь — он скончался во Флоренции 29 июля 1457 года в
+              возрасте 35и лет, оставив молодую вдову и осиротевших детей. Он был похоронен в церкви Санта Феличе ин
+              Пьяцца. После смерти его компаньон Пьеро ди Лоренцо подал в суд на вдову Пезеллино с требованием
+              выплатить ему часть денег за алтарь, который Франческо так и не смог завершить. Но флорентийский суд
+              принял сторону вдовы.</p>
+          </div>
+          <div class="artist-info" data-target="perudjino">
+            <picture class="artist__picture">
+              <source data-srcset="/img/perudjino-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/perudjino-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/perudjino-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/perudjino.webp" type="image/webp">
+              <img src="/img/perudjino.webp" alt="картина Пьетро Перуджино" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Пьетро Перуджино</h3>
+            <p class="artist__lived">1446 — 1524.</p>
+            <p class="artist__about">Итальянский живописец эпохи Возрождения, представитель умбрийской школы.</p>
+          </div>
+          <div class="artist-info" data-target="peruci">
+            <picture class="artist__picture">
+              <source data-srcset="/img/peruci-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/peruci-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/peruci-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/peruci.webp" type="image/webp">
+              <img src="/img/peruci.webp" alt="картина Перуцци, Бальдассаре" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Перуцци, Бальдассаре</h3>
+            <p class="artist__lived">15 января 1481 — 6 января 1536.</p>
+            <p class="artist__about">Итальянский архитектор и живописец эпохи Высокого Возрождения и раннего
+              маньеризма.</p>
+          </div>
+          <div class="artist-info" data-target="pizanelo">
+            <picture class="artist__picture">
+              <source data-srcset="/img/pizanelo-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/pizanelo-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/pizanelo-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/pizanelo.webp" type="image/webp">
+              <img src="/img/pizanelo.webp" alt="картина Пизанелло" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Пизанелло</h3>
+            <p class="artist__lived">ок. 1392/1395 — 1455.</p>
+            <p class="artist__about">Один из наиболее выдающихся художников эпохи Возрождения и раннего итальянского
+              кватроченто.</p>
+          </div>
+          <div class="artist-info" data-target="pinturikio">
+            <picture class="artist__picture">
+              <source data-srcset="/img/pinturikio-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/pinturikio-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/pinturikio-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/pinturikio.webp" type="image/webp">
+              <img src="/img/pinturikio.webp" alt="картина Пинтуриккьо" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Пинтуриккьо</h3>
+            <p class="artist__lived">1454 — 11 декабря 1513.</p>
+            <p class="artist__about">Представитель умбрийской школы кватроченто. Учился у Фьоренцо ди Лоренцо, вместе
+              с Рафаэлем — у Перуджино, которому помогал при создании фресок Сикстинской капеллы Ватикана (1481—1482),
+              а по некоторым данным — ещё и у Бенедетто Капорали, создателя дворца кардинала Пассерини, впоследствии
+              расписанного Синьорелли. Вероятно, испытал влияние и Бенедетто Бонфильи, учителя Перуджино. Став зрелым
+              мастером, Пинтуриккьо отказался от некоторых принципов Перуджино — однообразности и степенности фигур,
+              единства времени и места, — что сближает его скорее с Боттичелли. Работал во многих городах Италии —
+              Перудже, Риме, Орвието, Сполето, Сиене. Наиболее известные росписи — в церкви Санта-Мария-дель-Пополо,
+              Апартаментах Борджиа и Сиенском соборе (библиотека Пикколомини). На его фресках часто появляются
+              «гротески» (элементы растительного и архитектурного орнамента). Из станковых полотен примечателен
+              «Портрет мальчика», хранящийся в Дрезденской галерее.</p>
+          </div>
+          <div class="acc">
+            <h3 class="acc__period">С 1400 по 1499 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn acc__btn-it" data-path="dibindo">Бенедетто ди
+                    Биндо
+                  </button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn"
+                    data-path="bergonione">Бергоньоне,
+                    Амброджо
+                  </button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn" data-path="bisolo">Биссоло,
+                    Франческо
+                  </button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn"
+                    data-path="boltrafio">Больтраффио,
+                    Джованни
+                  </button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn"
+                    data-path="bonsiniori">Бонсиньори,
+                    Франческо
+                  </button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn" data-path="botichini">Боттичини,
+                    Рафаэлло
+                  </button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn" data-path="bramantino">
+                    Брамантино
+                  </button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn" data-path="brea">Бреа, Людовико
+                  </button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn" data-path="tuchi">Бьяджо
+                    д’Антонио
+                    Туччи
+                  </button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn" data-path="vekieta">Веккьетта
+                  </button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn" data-path="verokiu">Андреа
+                    Верроккьо
+                  </button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn tab-active"
+                    data-path="girlandayo">
+                    Доменико Гирландайо
+                  </button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn" data-path="gozoli">Беноццо
+                    Гоццоли
+                  </button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn" data-path="granachi">Граначчи,
+                    Франческо
+                  </button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn" data-path="cheko">Грегорио ди
+                    Чекко
+                  </button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn" data-path="udine">Джованни да
+                    Удине
+                  </button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn" data-path="paolo">Джованни ди
+                    Паоло
+                  </button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn" data-path="djordjone">Джорджоне
+                  </button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn" data-path="parentino">Парентино,
+                    Бернардо
+                  </button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn" data-path="pezelino">Пезеллино
+                  </button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn" data-path="perudjino">Пьетро
+                    Перуджино
+                  </button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn" data-path="peruci">Перуцци,
+                    Бальдассаре
+                  </button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn" data-path="pizanelo">Пизанелло
+                  </button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn" data-path="pinturikio">
+                    Пинтуриккьо
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 1500 по 1599 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 1600 по 1699 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 1700 по 1799 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 1800 по 1899 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 1900 по 1999 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 2000 г.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="flag-content" data-target="ru">
+          <div class="artist-info artist-info-ru" data-target="dionisiy">
+            <picture class="artist__picture">
+              <source data-srcset="/img/dionisiy-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/dionisiy-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/dionisiy-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/dionisiy.webp" type="image/webp">
+              <img src="/img/dionisiy.webp" alt="Дионисий" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Дионисий</h3>
+            <p class="artist__lived">ок. 1440 — 1503/08 год.</p>
+            <p class="artist__about">Ведущий московский иконописец и мастер фресок конца XV — начала XVI веков.
+              Считается продолжателем традиций Андрея Рублёва. Дионисий — первый известный по документам русский
+              иконописец светского сословия.</p>
+          </div>
+          <div class="artist-info" data-target="rublev">
+            <picture class="artist__picture">
+              <source data-srcset="/img/rublev-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/rublev-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/rublev-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/rublev.webp" type="image/webp">
+              <img src="/img/rublev.webp" alt="Андрей Рублёв" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Андрей Рублёв</h3>
+            <p class="artist__lived">ок. 1360 — 17 октября 1428 или 29 января 1430.</p>
+            <p class="artist__about">Русский иконописец московской школы иконописи, книжной и монументальной живописи
+              XV века. Канонизирован Русской православной церковью в лике преподобных.</p>
+          </div>
+          <div class="acc">
+            <h3 class="acc__period">С 1400 по 1499 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class=" acc__item">
+                  <button class="acc__btn acc__btn-ru"
+                    data-path="dionisiy">
+                    Дионисий
+                  </button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn" data-path="rublev">Андрей Рублёв
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 1500 по 1599 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 1600 по 1699 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 1700 по 1799 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 1800 по 1899 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 1900 по 1999 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 2000 г.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="flag-content" data-target="bel">
+          <div class="artist-info artist-info-bel" data-target="zittov">
+            <picture class="artist__picture">
+              <source data-srcset="/img/zittov-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/zittov-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/zittov-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/zittov.webp" type="image/webp">
+              <img src="/img/zittov.webp" alt="Зиттов, Михель" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Зиттов, Михель</h3>
+            <p class="artist__lived">ок. 1459 — 21 декабря 1525.</p>
+            <p class="artist__about">Мастер старонидерландского искусства из Ревеля, ученик Мемлинга, один из
+              крупнейших портретистов своего времени.</p>
+          </div>
+          <div class="artist-info" data-target="memling">
+            <picture class="artist__picture">
+              <source data-srcset="/img/memling-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/memling-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/memling-1024.webp" type="image/webp" media="(max-width: 1499px)">
+              <source data-srcset="/img/memling.webp" type="image/webp">
+              <img src="/img/memling.webp" alt="Мемлинг, Ганс" class="lazyload">
+            </picture>
+            <h3 class="artist__name">Мемлинг, Ганс</h3>
+            <p class="artist__lived">1433/1435 — 11 августа 1494.</p>
+            <p class="artist__about">Фламандский живописец немецкого происхождения, один из наиболее значительных
+              художников во Фландрии второй половины XV века. Продолжая позднеготическую живописную традицию, Мемлинг
+              писал картины преимущественно на духовные сюжеты. Уроженец Гессена, он работал главным образом в Брюгге,
+              где ныне находится музей его имени.</p>
+          </div>
+          <div class="acc">
+            <h3 class="acc__period">С 1400 по 1499 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn acc__btn-bel" data-path="zittov">
+                    Зиттов, Михель
+                  </button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn" data-path="memling">Мемлинг,
+                    Ганс
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 1500 по 1599 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 1600 по 1699 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 1700 по 1799 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 1800 по 1899 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 1900 по 1999 гг.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+            <h3 class="acc__period">С 2000 г.</h3>
+            <div class="acc__content">
+              <ul class="acc__list">
+                <li class="acc__item">
+                  <button class="acc__btn">List item 1</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 2</button>
+                </li>
+                <li class="acc__item">
+                  <button class="acc__btn">List item 3</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="events" class="events">
+      <div class="container events__container">
+        <h2 class="title">События</h2>
+        <ul class="events__list">
+          <li class="events__item card card-1">
+            <picture class="card__img">
+              <source data-srcset="/img/card-1-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/card-1-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/card-1-1024.webp" type="image/webp" media="(max-width: 1100px)">
+              <source data-srcset="/img/card-1.webp" type="image/webp">
+              <img src="/img/card-1.webp" alt="Картинка" class="lazyload">
+            </picture>
+            <div class="card__museum">Музей им. Щусева<br> 20 марта по 30 апреля</div>
+            <div class="card__box">
+              <div class="card__box-top">
+                <h3 class="card__title">Книжная гравюра в живом восприятии</h3>
+                <p class="card__desc">Один из ведущих флорентийских художников Кватроченто, основатель художественной
+                  династии, которую продолжили его брат Давид и сын Ридольфо.</p>
+              </div>
+              <a href="#" class="card__more">Подробнее</a>
+            </div>
+          </li>
+          <li class="events__item card card-2">
+            <picture class="card__img">
+              <source data-srcset="/img/card-2-320.webp" type="image/webp" media="(max-width: 685px)">
+              <source data-srcset="/img/card-2-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/card-2-1024.webp" type="image/webp" media="(max-width: 1100px)">
+              <source data-srcset="/img/card-2.webp" type="image/webp">
+              <img src="/img/card-2.webp" alt="Картинка" class="lazyload">
+            </picture>
+            <div class="card__museum">ММОМА<br> 24 марта 19:00</div>
+            <div class="card__box">
+              <div class="card__box-top">
+                <h3 class="card__title">«Открытая дискуссия». Дмитрий&nbsp;Петров&nbsp;и Сергей Ильин.</h3>
+                <p class="card__desc">Высокий уровень вовлечения представителей целевой аудитории является четким
+                  доказательством простого факта.</p>
+              </div>
+              <a href="#" class="card__more">Подробнее</a>
+            </div>
+          </li>
+          <li class="events__item card card-3">
+            <picture class="card__img">
+              <source data-srcset="/img/card-3-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/card-3-1024.webp" type="image/webp" media="(max-width: 1100px)">
+              <source data-srcset="/img/card-3.webp" type="image/webp">
+              <img src="/img/card-3.webp" alt="Картинка" class="lazyload">
+            </picture>
+            <div class="card__museum">Еврейский музей<br> с 31 марта по 21 апреля</div>
+            <div class="card__box">
+              <div class="card__box-top">
+                <h3 class="card__title">Выставка «Формация 2020»</h3>
+                <p class="card__desc">Идейные соображения высшего порядка, а также современная методология разработки
+                  играет важную роль в формировании глубокомысленных рассуждений.</p>
+              </div>
+              <a href="#" class="card__more">Подробнее</a>
+            </div>
+          </li>
+          <li class="events__item card card-4">
+            <picture class="card__img">
+              <source data-srcset="/img/card-4-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/card-4-1024.webp" type="image/webp" media="(max-width: 1100px)">
+              <source data-srcset="/img/card-4.webp" type="image/webp">
+              <img src="/img/card-4.webp" alt="Картинка" class="lazyload">
+            </picture>
+            <div class="card__museum">Третьяковка на Крымском валу<br> с 30 марта по 30 апреля</div>
+            <div class="card__box">
+              <div class="card__box-top">
+                <h3 class="card__title">XXIV Международная биеннале молодого искусства</h3>
+                <p class="card__desc">Внезапно, реплицированные с зарубежных источников, современные исследования.</p>
+              </div>
+              <a href="#" class="card__more">Подробнее</a>
+            </div>
+          </li>
+          <li class="events__item card card-5">
+            <picture class="card__img">
+              <source data-srcset="/img/card-5-768.webp" type="image/webp" media="(max-width: 940px)">
+              <source data-srcset="/img/card-5-1024.webp" type="image/webp" media="(max-width: 1100px)">
+              <source data-srcset="/img/card-5.webp" type="image/webp">
+              <img src="/img/card-5.webp" alt="Картинка" class="lazyload">
+            </picture>
+            <div class="card__museum">ММАМ<br> с 8 апреля по 20 мая</div>
+            <div class="card__box">
+              <div class="card__box-top">
+                <h3 class="card__title">Джон Винзор. Фотографии из серии «Метафора серебра»</h3>
+                <p class="card__desc">Один из ведущих флорентийских художников Кватроченто, основатель художественной
+                  династии, которую продолжили его брат Давид и сын Ридольфо.</p>
+              </div>
+              <a href="#" class="card__more">Подробнее</a>
+            </div>
+          </li>
+        </ul>
+        <div class="events__slider">
+          <div class="slider-3 swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide card">
+                <img src="/img/card-1-320.webp" alt="Картинка" class="card__img lazyload">
+                <div class="card__museum">Музей им. Щусева<br> 20 марта по 30 апреля</div>
+                <div class="card__box">
+                  <div class="card__box-top">
+                    <h3 class="card__title">Книжная гравюра в живом восприятии</h3>
+                    <p class="card__desc">Один из ведущих флорентийских художников Кватроченто, основатель
+                      художественной
+                      династии, которую продолжили его брат Давид и сын Ридольфо.</p>
+                  </div>
+                  <a href="#" class="card__more">Подробнее</a>
+                </div>
+              </div>
+              <div class="swiper-slide card">
+                <img src="/img/card-2-320.webp" alt="Картинка" class="card__img lazyload">
+                <div class="card__museum">ММОМА<br> 24 марта 19:00</div>
+                <div class="card__box">
+                  <div class="card__box-top">
+                    <h3 class="card__title">«Открытая дискуссия». Дмитрий&nbsp;Петров&nbsp;и Сергей Ильин.</h3>
+                    <p class="card__desc">Высокий уровень вовлечения представителей целевой аудитории является четким
+                      доказательством простого факта.</p>
+                  </div>
+                  <a href="#" class="card__more">Подробнее</a>
+                </div>
+              </div>
+              <div class="swiper-slide card">
+                <img src="/img/card-3-320.webp" alt="Картинка" class="card__img lazyload">
+                <div class="card__museum">Еврейский музей<br> с 31 марта по 21 апреля</div>
+                <div class="card__box">
+                  <div class="card__box-top">
+                    <h3 class="card__title">Выставка «Формация 2020»</h3>
+                    <p class="card__desc">Идейные соображения высшего порядка, а также современная методология
+                      разработки
+                      играет важную роль в формировании глубокомысленных рассуждений.</p>
+                  </div>
+                  <a href="#" class="card__more">Подробнее</a>
+                </div>
+              </div>
+              <div class="swiper-slide card">
+                <img src="/img/card-4-320.webp" alt="Картинка" class="card__img lazyload">
+                <div class="card__museum">Третьяковка на Крымском валу<br> с 30 марта по 30 апреля</div>
+                <div class="card__box card__box-4">
+                  <div class="card__box-top">
+                    <h3 class="card__title">XXIV Международная биеннале молодого искусства</h3>
+                    <p class="card__desc">Внезапно, реплицированные с зарубежных источников, современные исследования.
+                    </p>
+                  </div>
+                  <a href="#" class="card__more">Подробнее</a>
+                </div>
+              </div>
+              <div class="swiper-slide card">
+                <img src="/img/card-5-320.webp" alt="Картинка" class="card__img lazyload">
+                <div class="card__museum">ММАМ<br> с 8 апреля по 20 мая</div>
+                <div class="card__box">
+                  <div class="card__box-top">
+                    <h3 class="card__title">Джон Винзор. Фотографии из серии «Метафора серебра»</h3>
+                    <p class="card__desc">Один из ведущих флорентийских художников Кватроченто, основатель
+                      художественной
+                      династии, которую продолжили его брат Давид и сын Ридольфо.</p>
+                  </div>
+                  <a href="#" class="card__more">Подробнее</a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        <button aria-label="Кнопка показать" class="events__btn">Все события</button>
+      </div>
+    </section>
+
+    <section id="publications" class="publications">
+      <div class="publications__bg">
+        <div class="container publications__container">
+          <div class="publications__box">
+            <h2 class="title publications__title">Издания</h2>
+            <form aria-label="Выбор чекбокса категории" action="#"
+              class="publications__form-categories form-categories">
+              <fieldset class="form-categories__fieldset">
+                <legend class="form-categories__legend">
+                  Категории
+                </legend>
+                <ul class="form-categories__list">
+                  <li class="form-categories__item"><label class="form-categories__label">
+                      <input type="checkbox" class="form-categories__input">
+                      <span class="form-categories__span"></span>
+                      Бестселлеры
+                    </label></li>
+                  <li class="form-categories__item"><label class="form-categories__label">
+                      <input type="checkbox" class="form-categories__input">
+                      <span class="form-categories__span"></span>
+                      Искусство
+                    </label></li>
+                  <li class="form-categories__item"><label class="form-categories__label">
+                      <input type="checkbox" class="form-categories__input">
+                      <span class="form-categories__span"></span>
+                      Архитектура
+                    </label></li>
+                  <li class="form-categories__item"><label
+                      class="form-categories__label form-categories__label-active is-active">
+                      <input type="checkbox" checked class="form-categories__input">
+                      <span class="form-categories__span"></span>
+                      Дизайн
+                    </label></li>
+                  <li class="form-categories__item"><label class="form-categories__label">
+                      <input type="checkbox" class="form-categories__input">
+                      <span class="form-categories__span"></span>
+                      Мода
+                    </label></li>
+                  <li class="form-categories__item"><label class="form-categories__label">
+                      <input type="checkbox" class="form-categories__input">
+                      <span class="form-categories__span"></span>
+                      Детям
+                    </label></li>
+                  <li class="form-categories__item"><label class="form-categories__label">
+                      <input type="checkbox" class="form-categories__input">
+                      <span class="form-categories__span"></span>
+                      Художественная литература
+                    </label></li>
+                  <li class="form-categories__item"><label class="form-categories__label">
+                      <input type="checkbox" class="form-categories__input">
+                      <span class="form-categories__span"></span>
+                      Публицистика
+                    </label></li>
+                  <li class="form-categories__item"><label class="form-categories__label">
+                      <input type="checkbox" class="form-categories__input">
+                      <span class="form-categories__span"></span>
+                      Путеводители
+                    </label></li>
+                  <li class="form-categories__item"><label class="form-categories__label">
+                      <input type="checkbox" class="form-categories__input">
+                      <span class="form-categories__span"></span>
+                      Философия
+                    </label></li>
+                  <li class="form-categories__item"><label class="form-categories__label">
+                      <input type="checkbox" class="form-categories__input">
+                      <span class="form-categories__span"></span>
+                      Учебная литература
+                    </label></li>
+                  <li class="form-categories__item"><label class="form-categories__label">
+                      <input type="checkbox" class="form-categories__input">
+                      <span class="form-categories__span"></span>
+                      Журналы и газеты
+                    </label></li>
+                </ul>
+              </fieldset>
+            </form>
+            <div class="spoiler-block">
+              <a href="#" class="spoiler-title">Категории</a>
+              <ul class="form-categories__list spoiler-content">
+                <li class="form-categories__item"><label class="form-categories__label">
+                    <input type="checkbox" class="form-categories__input">
+                    <span class="form-categories__span"></span>
+                    Бестселлеры
+                  </label></li>
+                <li class="form-categories__item"><label class="form-categories__label">
+                    <input type="checkbox" class="form-categories__input">
+                    <span class="form-categories__span"></span>
+                    Искусство
+                  </label></li>
+                <li class="form-categories__item"><label class="form-categories__label">
+                    <input type="checkbox" class="form-categories__input">
+                    <span class="form-categories__span"></span>
+                    Архитектура
+                  </label></li>
+                <li class="form-categories__item"><label
+                    class="form-categories__label form-categories__label-active is-active">
+                    <input type="checkbox" checked class="form-categories__input">
+                    <span class="form-categories__span"></span>
+                    Дизайн
+                  </label></li>
+                <li class="form-categories__item"><label class="form-categories__label">
+                    <input type="checkbox" class="form-categories__input">
+                    <span class="form-categories__span"></span>
+                    Мода
+                  </label></li>
+                <li class="form-categories__item"><label class="form-categories__label">
+                    <input type="checkbox" class="form-categories__input">
+                    <span class="form-categories__span"></span>
+                    Детям
+                  </label></li>
+                <li class="form-categories__item"><label class="form-categories__label">
+                    <input type="checkbox" class="form-categories__input">
+                    <span class="form-categories__span"></span>
+                    Художественная литература
+                  </label></li>
+                <li class="form-categories__item"><label class="form-categories__label">
+                    <input type="checkbox" class="form-categories__input">
+                    <span class="form-categories__span"></span>
+                    Публицистика
+                  </label></li>
+                <li class="form-categories__item"><label class="form-categories__label">
+                    <input type="checkbox" class="form-categories__input">
+                    <span class="form-categories__span"></span>
+                    Путеводители
+                  </label></li>
+                <li class="form-categories__item"><label class="form-categories__label">
+                    <input type="checkbox" class="form-categories__input">
+                    <span class="form-categories__span"></span>
+                    Философия
+                  </label></li>
+                <li class="form-categories__item"><label class="form-categories__label">
+                    <input type="checkbox" class="form-categories__input">
+                    <span class="form-categories__span"></span>
+                    Учебная литература
+                  </label></li>
+                <li class="form-categories__item"><label class="form-categories__label">
+                    <input type="checkbox" class="form-categories__input">
+                    <span class="form-categories__span"></span>
+                    Журналы и газеты
+                  </label></li>
+              </ul>
+            </div>
+            <form aria-label="Выбор цены от и до" action="#" class="publications__form-price form-price">
+              <fieldset class="form-price__fieldset">
+                <legend class="form-price__legend">Цена</legend>
+                <div class="form-price__box">
+                  <label class="form-price__label">От</label>
+                  <input type="text" name="from" placeholder="50" class="form-price__input">
+                  <label class="form-price__label">до</label>
+                  <input type="text" name="to" placeholder="25 000" class="form-price__input">
+                  <label class="form-price__label">руб.</label>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="publications__slider">
+            <div class="slider-1 swiper-container">
+              <div class="slider__top">
+                <div class="slider__btn-prev swiper-button-prev"></div>
+                <div class="slider__pag swiper-pagination"></div>
+                <div class="slider__btn-next swiper-button-next"></div>
+              </div>
+              <div class="swiper-wrapper">
+                <div class="swiper-slide slider-1__card">
+                  <picture class="card__img">
+                    <source data-srcset="/img/card1-1-768.webp" type="image/webp" media="(max-width: 940px)">
+                    <source data-srcset="/img/card1-1-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                    <source data-srcset="/img/card1-1.webp" type="image/webp">
+                    <img src="/img/card1-1.webp" alt="Картинка издания" class="lazyload">
+                  </picture>
+                  <div class="slider-1__card-box">
+                    <div class="slider-1__card-publication">
+                      <span class="slider-1__card-title">Искусство цвета</span>
+                      <span class="slider-1__card-name">Иттен, Иоханнес</span>
+                    </div>
+                    <span class="slider-1__card-price">620 руб</span>
+                  </div>
+                  <a href="#" class="slider-1__card-link">Заказать</a>
+                </div>
+                <div class="swiper-slide slider-1__card">
+                  <picture class="card__img">
+                    <source data-srcset="/img/card1-2-768.webp" type="image/webp" media="(max-width: 940px)">
+                    <source data-srcset="/img/card1-2-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                    <source data-srcset="/img/card1-2.webp" type="image/webp">
+                    <img src="/img/card1-2.webp" alt="Картинка издания" class="lazyload">
+                  </picture>
+                  <div class="slider-1__card-box">
+                    <div class="slider-1__card-publication">
+                      <span class="slider-1__card-title">Типографика</span>
+                      <span class="slider-1__card-name">Рудер, Эмиль</span>
+                    </div>
+                    <span class="slider-1__card-price">2 450 руб</span>
+                  </div>
+                  <a href="#" class="slider-1__card-link">Заказать</a>
+                </div>
+                <div class="swiper-slide slider-1__card">
+                  <picture class="card__img">
+                    <source data-srcset="/img/card1-3-768.webp" type="image/webp" media="(max-width: 940px)">
+                    <source data-srcset="/img/card1-3-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                    <source data-srcset="/img/card1-3.webp" type="image/webp">
+                    <img src="/img/card1-3.webp" alt="Картинка издания" class="lazyload">
+                  </picture>
+                  <div class="slider-1__card-box">
+                    <div class="slider-1__card-publication">
+                      <span class="slider-1__card-title">Книга про буквы</span>
+                      <span class="slider-1__card-name">Гордон, Юрий</span>
+                    </div>
+                    <span class="slider-1__card-price">2 200 руб</span>
+                  </div>
+                  <a href="#" class="slider-1__card-link">Заказать</a>
+                </div>
+                <div class="swiper-slide slider-1__card">
+                  <picture class="card__img">
+                    <source data-srcset="/img/card1-4-768.webp" type="image/webp" media="(max-width: 940px)">
+                    <source data-srcset="/img/card1-4-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                    <source data-srcset="/img/card1-4.webp" type="image/webp">
+                    <img src="/img/card1-4.webp" alt="Картинка издания" class="lazyload">
+                  </picture>
+                  <div class="slider-1__card-box">
+                    <div class="slider-1__card-publication">
+                      <span class="slider-1__card-title">Николай Ильин</span>
+                      <span class="slider-1__card-name">Кричевский, Владимир</span>
+                    </div>
+                    <span class="slider-1__card-price">1 100 руб</span>
+                  </div>
+                  <a href="#" class="slider-1__card-link">Заказать</a>
+                </div>
+                <div class="swiper-slide slider-1__card">
+                  <picture class="card__img">
+                    <source data-srcset="/img/card1-5-768.webp" type="image/webp" media="(max-width: 940px)">
+                    <source data-srcset="/img/card1-5-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                    <source data-srcset="/img/card1-5.webp" type="image/webp">
+                    <img src="/img/card1-5.webp" alt="Картинка издания" class="lazyload">
+                  </picture>
+                  <div class="slider-1__card-box">
+                    <div class="slider-1__card-publication">
+                      <span class="slider-1__card-title">Модульные сетки в граф...</span>
+                      <span class="slider-1__card-name">Мюллер-Брокманн, Йозеф</span>
+                    </div>
+                    <span class="slider-1__card-price">1 450 руб</span>
+                  </div>
+                  <a href="#" class="slider-1__card-link">Заказать</a>
+                </div>
+                <div class="swiper-slide slider-1__card">
+                  <picture class="card__img">
+                    <source data-srcset="/img/card1-6-768.webp" type="image/webp" media="(max-width: 940px)">
+                    <source data-srcset="/img/card1-6-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                    <source data-srcset="/img/card1-6.webp" type="image/webp">
+                    <img src="/img/card1-6.webp" alt="Картинка издания" class="lazyload">
+                  </picture>
+                  <div class="slider-1__card-box">
+                    <div class="slider-1__card-publication">
+                      <span class="slider-1__card-title">Эволюция графических ст...</span>
+                      <span class="slider-1__card-name">Хеллер, Чваст</span>
+                    </div>
+                    <span class="slider-1__card-price">3 200 руб</span>
+                  </div>
+                  <a href="#" class="slider-1__card-link">Заказать</a>
+                </div>
+                <div class="swiper-slide slider-1__card">
+                  <picture class="card__img">
+                    <source data-srcset="/img/card1-7-768.webp" type="image/webp" media="(max-width: 940px)">
+                    <source data-srcset="/img/card1-7-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                    <source data-srcset="/img/card1-7.webp" type="image/webp">
+                    <img src="/img/card1-7.webp" alt="Картинка издания" class="lazyload">
+                  </picture>
+                  <div class="slider-1__card-box">
+                    <div class="slider-1__card-publication">
+                      <span class="slider-1__card-title">Искусство и визуальное в...</span>
+                      <span class="slider-1__card-name">Арнхейм, Рудольф</span>
+                    </div>
+                    <span class="slider-1__card-price">2 200 руб</span>
+                  </div>
+                  <a href="#" class="slider-1__card-link">Заказать</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ul class="publications__list">
+            <li class="publications__item slider-1__card">
+              <img src="/img/card1-1-320.webp" alt="Картинка издания" class="publications__img lazyload">
+              <div class="slider-1__card-box">
+                <div class="slider-1__card-publication">
+                  <span class="slider-1__card-title">Искусство цвета</span>
+                  <span class="slider-1__card-name">Иттен, Иоханнес</span>
+                </div>
+                <span class="slider-1__card-price">620 руб</span>
+              </div>
+              <a href="#" class="slider-1__card-link">Заказать</a>
+            </li>
+            <li class="publications__item slider-1__card">
+              <img src="/img/card1-2-320.webp" alt="Картинка издания" class="publications__img lazyload">
+              <div class="slider-1__card-box">
+                <div class="slider-1__card-publication">
+                  <span class="slider-1__card-title">Типографика</span>
+                  <span class="slider-1__card-name">Рудер, Эмиль</span>
+                </div>
+                <span class="slider-1__card-price">2 450 руб</span>
+              </div>
+              <a href="#" class="slider-1__card-link">Заказать</a>
+            </li>
+            <li class="publications__item slider-1__card">
+              <img src="/img/card1-3-320.webp" alt="Картинка издания" class="publications__img lazyload">
+              <div class="slider-1__card-box">
+                <div class="slider-1__card-publication">
+                  <span class="slider-1__card-title">Книга про буквы</span>
+                  <span class="slider-1__card-name">Гордон, Юрий</span>
+                </div>
+                <span class="slider-1__card-price">2 200 руб</span>
+              </div>
+              <a href="#" class="slider-1__card-link">Заказать</a>
+            </li>
+            <li class="publications__item slider-1__card">
+              <img src="/img/card1-4-320.webp" alt="Картинка издания" class="publications__img lazyload">
+              <div class="slider-1__card-box">
+                <div class="slider-1__card-publication">
+                  <span class="slider-1__card-title">Николай Ильин</span>
+                  <span class="slider-1__card-name">Кричевский, Владимир</span>
+                </div>
+                <span class="slider-1__card-price">1 100 руб</span>
+              </div>
+              <a href="#" class="slider-1__card-link">Заказать</a>
+            </li>
+            <li class="publications__item slider-1__card">
+              <img src="/img/card1-5-320.webp" alt="Картинка издания" class="publications__img lazyload">
+              <div class="slider-1__card-box">
+                <div class="slider-1__card-publication">
+                  <span class="slider-1__card-title">Модульные сетки в граф...</span>
+                  <span class="slider-1__card-name">Мюллер-Брокманн, Йозеф</span>
+                </div>
+                <span class="slider-1__card-price">1 450 руб</span>
+              </div>
+              <a href="#" class="slider-1__card-link">Заказать</a>
+            </li>
+            <li class="publications__item slider-1__card">
+              <img src="/img/card1-6-320.webp" alt="Картинка издания" class="publications__img lazyload">
+              <div class="slider-1__card-box">
+                <div class="slider-1__card-publication">
+                  <span class="slider-1__card-title">Эволюция графических ст...</span>
+                  <span class="slider-1__card-name">Хеллер, Чваст</span>
+                </div>
+                <span class="slider-1__card-price">3 200 руб</span>
+              </div>
+              <a href="#" class="slider-1__card-link">Заказать</a>
+            </li>
+            <li class="publications__item slider-1__card">
+              <img src="/img/card1-7-320.webp" alt="Картинка издания" class="publications__img lazyload">
+              <div class="slider-1__card-box">
+                <div class="slider-1__card-publication">
+                  <span class="slider-1__card-title">Искусство и визуальное в...</span>
+                  <span class="slider-1__card-name">Арнхейм, Рудольф</span>
+                </div>
+                <span class="slider-1__card-price">2 200 руб</span>
+              </div>
+              <a href="#" class="slider-1__card-link">Заказать</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="projects" class="projects">
+      <div class="container projects__container">
+        <h2 class="title">Проекты</h2>
+        <p class="projects__info">
+          Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей деятельности однозначно
+          фиксирует необходимость своевременного выполнения сверхзадачи. А ещё независимые государства смешаны с не
+          уникальными данными до степени совершенной неузнаваемости, из&#8209;за чего возрастает их статус
+          бесполезности.
+          Прежде всего, постоянное информационно&#8209;пропагандистское
+          <span class="tooltip">
+            <button class="tooltip__btn" aria-labelledby="tt-1"></button>
+            <span class="tooltip__txt tooltip__txt-1" role="tooltip" id="tt-1">Пример современных тенденций -
+              современная методология
+              разработки</span>
+          </span>
+          обеспечение нашей деятельности однозначно фиксирует необходимость экономической целесообразности принимаемых
+          решений. И нет сомнений, что действия представителей оппозиции могут быть рассмотрены
+          <span class="tooltip">
+            <button class="tooltip__btn" aria-labelledby="tt-2"></button>
+            <span class="tooltip__txt tooltip__txt-2" role="tooltip" id="tt-2">Приятно, граждане, наблюдать, как
+              сделанные на базе
+              аналитики выводы вызывают у вас эмоции</span>
+          </span>
+          исключительно в разрезе маркетинговых и финансовых
+          <span class="tooltip">
+            <button class="tooltip__btn" aria-labelledby="tt-3"></button>
+            <span class="tooltip__txt tooltip__txt-3" role="tooltip" id="tt-3">В стремлении повысить качество</span>
+          </span>
+          предпосылок. Банальные, но неопровержимые выводы, а также представители современных социальных резервов
+          призывают нас к новым свершениям, которые, в свою очередь, должны быть смешаны с не уникальными данными до
+          степени совершенной неузнаваемости. Подробнее:
+          <a href="#" class="projects__info-link">blanchard-art.ru/prspants/about</a>
+        </p>
+        <h3 class="partner-title">Партнёры проектов:</h3>
+        <div class="projects__slider">
+          <div class="slider-2 swiper-container">
+            <div class="slider__btn-prev slider-2__btn-prev swiper-button-prev"></div>
+            <div class="slider__btn-next slider-2__btn-next swiper-button-next"></div>
+            <div class="slider__wrapper swiper-wrapper">
+              <a href="#" class="slider-2__link swiper-slide">
+                <picture class="slider-2__pic">
+                  <source data-srcset="/img/partner-1-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/partner-1-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/partner-1-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/partner-1.webp" type="image/webp">
+                  <img src="/img/partner-1.webp" alt="Логотип партнера" class="lazyload">
+                </picture>
+              </a>
+              <a href="#" class="slider-2__link swiper-slide">
+                <picture class="slider-2__pic swiper-slide">
+                  <source data-srcset="/img/partner-2-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/partner-2-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/partner-2-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/partner-2.webp" type="image/webp">
+                  <img src="/img/partner-2.webp" alt="Логотип партнера" class="lazyload">
+                </picture>
+              </a>
+              <a href="#" class="slider-2__link swiper-slide">
+                <picture class="slider-2__pic swiper-slide">
+                  <source data-srcset="/img/partner-3-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/partner-3-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/partner-3-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/partner-3.webp" type="image/webp">
+                  <img src="/img/partner-3.webp" alt="Логотип партнера" class="lazyload">
+                </picture>
+              </a>
+              <a href="#" class="slider-2__link swiper-slide">
+                <picture class="slider-2__pic swiper-slide">
+                  <source data-srcset="/img/partner-4-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/partner-4-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/partner-4-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/partner-4.webp" type="image/webp">
+                  <img src="/img/partner-4.webp" alt="Логотип партнера" class="lazyload">
+                </picture>
+              </a>
+              <a href="#" class="slider-2__link swiper-slide">
+                <picture class="slider-2__pic swiper-slide">
+                  <source data-srcset="/img/partner-5-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/partner-5-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/partner-5-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/partner-5.webp" type="image/webp">
+                  <img src="/img/partner-5.webp" alt="Логотип партнера" class="lazyload">
+                </picture>
+              </a>
+              <a href="#" class="slider-2__link swiper-slide">
+                <picture class="slider-2__pic swiper-slide">
+                  <source data-srcset="/img/partner-6-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/partner-6-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/partner-6-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/partner-6.webp" type="image/webp">
+                  <img src="/img/partner-6.webp" alt="Логотип партнера" class="lazyload">
+                </picture>
+              </a>
+              <a href="#" class="slider-2__link swiper-slide">
+                <picture class="slider-2__pic swiper-slide">
+                  <source data-srcset="/img/partner-7-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/partner-7-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/partner-7-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/partner-7.webp" type="image/webp">
+                  <img src="/img/partner-7.webp" alt="Логотип партнера" class="lazyload">
+                </picture>
+              </a>
+              <a href="#" class="slider-2__link swiper-slide">
+                <picture class="slider-2__pic swiper-slide">
+                  <source data-srcset="/img/partner-8-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/partner-8-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/partner-8-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/partner-8.webp" type="image/webp">
+                  <img src="/img/partner-8.webp" alt="Логотип партнера" class="lazyload">
+                </picture>
+              </a>
+              <a href="#" class="slider-2__link swiper-slide">
+                <picture class="slider-2__pic swiper-slide">
+                  <source data-srcset="/img/partner-9-320.webp" type="image/webp" media="(max-width: 685px)">
+                  <source data-srcset="/img/partner-9-768.webp" type="image/webp" media="(max-width: 940px)">
+                  <source data-srcset="/img/partner-9-1024.webp" type="image/webp" media="(max-width: 1100px)">
+                  <source data-srcset="/img/partner-9.webp" type="image/webp">
+                  <img src="/img/partner-9.webp" alt="Логотип партнера" class="lazyload">
+                </picture>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contacts" class="contacts">
+      <h2 class="title container">Контакты</h2>
+      <div class="contacts__container">
+        <div class="contacts__box">
+          <div id="subscription" class="contacts__subscription">
+            <span class="contacts__room">Шоурум №4</span>
+            <address class="contacts__address">Леонтьевский переулок, дом 5, строение 1</address>
+            <form action="https://jsonplaceholder.typicode.com/posts" autocomplete="off" method="POST"
+              class="contacts__form">
+              <fieldset class="contacts__fieldset">
+                <legend class="contacts__legend">Заказать обратный звонок</legend>
+                <label for="name" class="contacts__label">
+                  <input aria-label="Введите имя" type="text" class="contacts__input" placeholder="Имя*"
+                    autocomplete="off" data-validate-field="name" name="name" id="name">
+                </label>
+                <label for="tel" class="contacts__label">
+                  <input aria-label="Введите номер телефона" type="tel" class="contacts__input" placeholder="Телефон*"
+                    autocomplete="off" data-validate-field="tel" name="tel" id="tel">
+                </label>
+                <button class="contacts__btn">Заказать</button>
+              </fieldset>
+            </form>
+            <h3 class="contacts__title-callto">Связаться в один клик</h3>
+            <ul class="contacts__list">
+              <li class="contacts__item"><a href="https://wa.me/79200000000" rel="noopener" target="_blank"
+                  class="contacts__link link-whatsapp"></a>
+              </li>
+              <li class="contacts__item"><a href="https://telegram.im/@USERNAME" rel="noopener" target="_blank"
+                  class="contacts__link link-telegram"></a></li>
+            </ul>
+          </div>
+          <div class="contacts__map" id="map"></div>
+          <div class="contacts__address-mobile">
+            <span class="contacts__room-320">Шоурум №4</span>
+            <address class="contacts__address-320">Леонтьевский переулок, дом 5, строение 1</address>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__bg">
+        <div class="container footer__container">
+          <picture class="footer__logo">
+            <source data-srcset="/img/logo-320.webp" type="image/webp" media="(max-width: 685px)">
+            <source data-srcset="/img/logo.webp" type="image/webp">
+            <img src="/img/logo.webp" alt="Blanchard - художественная галерея" class="lazyload">
+          </picture>
+          <ul class="footer__list">
+            <li class="footer__item"><a href="#" class="footer__link link-vk"></a></li>
+            <li class="footer__item"><a href="#" class="footer__link link-insta"></a></li>
+            <li class="footer__item"><a href="#" class="footer__link link-fb"></a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_API-ключ&lang=ru_RU"></script>
+  <script src="js/simplebar.min.js"></script>
+  <script src="js/choices.min.js"></script>
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/jquery-1.12.4.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="js/just-validate.min.js"></script>
+  <script src="js/inputmask.min.js"></script>
+  <script src="js/lazysizes.min.js" async=""></script>
+  <script src="js/script.min.js"></script>
+</body>
+
+</html>
