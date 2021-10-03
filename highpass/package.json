@@ -13,6 +13,7 @@
     "@babel/preset-env": "^7.15.6",
     "babel-loader": "^8.2.2",
     "browser-sync": "^2.27.5",
+    "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-babel": "^8.0.0",

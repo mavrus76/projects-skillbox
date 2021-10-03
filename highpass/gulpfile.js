@@ -1,27 +1,25 @@
-var {
+let {
   src,
   dest,
   series,
   watch
 } = require('gulp')
-var concat = require('gulp-concat')
-var htmlMin = require('gulp-htmlmin')
-var autoprefixes = require('gulp-autoprefixer')
-var sass = require('gulp-sass')(require('sass'))
-// var autoprefixer = require('autoprefixer')
-// var postcss = require('gulp-postcss');
-var cleanCSS = require('gulp-clean-css')
-var webp = require('gulp-webp')
-var svgSprite = require('gulp-svg-sprite')
-var image = require('gulp-image')
-var babel = require('gulp-babel')
-var uglify = require('gulp-uglify-es').default
-var notify = require('gulp-notify')
-var sourcemaps = require('gulp-sourcemaps')
-var del = require('del')
-var browserSync = require('browser-sync').create()
+let concat = require('gulp-concat')
+let htmlMin = require('gulp-htmlmin')
+let autoprefixes = require('gulp-autoprefixer')
+let sass = require('gulp-sass')(require('sass'))
+let cleanCSS = require('gulp-clean-css')
+let webp = require('gulp-webp')
+let svgSprite = require('gulp-svg-sprite')
+let image = require('gulp-image')
+let babel = require('gulp-babel')
+let uglify = require('gulp-uglify-es').default
+let notify = require('gulp-notify')
+let sourcemaps = require('gulp-sourcemaps')
+let del = require('del')
+let browserSync = require('browser-sync').create()
 
-var clean = () => {
+let clean = () => {
   exports.clean = clean
   return del([
     'build',
@@ -29,19 +27,19 @@ var clean = () => {
   ])
 }
 
-var resources = () => {
+let resources = () => {
   return src('src/libs/**')
     .pipe(dest('build/libs'))
     .pipe(dest('dev/libs'))
 }
 
-var fonts = () => {
+let fonts = () => {
   return src('src/fonts/**')
     .pipe(dest('build/fonts'))
     .pipe(dest('dev/fonts'))
 }
 
-var scss = () => {
+let scss = () => {
   return src('src/css/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
@@ -52,23 +50,17 @@ var scss = () => {
     .pipe(dest('src/css'))
 }
 
-var stylesDev = () => {
+let stylesDev = () => {
   return src('src/css/**/*.css')
     .pipe(sourcemaps.init())
     .pipe(concat('style.css'))
-    // .pipe(postcss([autoprefixer({
-    //   cascade: false
-    // })]))
     .pipe(sourcemaps.write())
     .pipe(dest('dev/css'))
 }
 
-var styles = () => {
+let styles = () => {
   return src('src/css/**/*.css')
     .pipe(concat('style.css'))
-    // .pipe(postcss([autoprefixer({
-    //   cascade: false
-    // })]))
     .pipe(cleanCSS({
       level: 2
     }))
@@ -76,12 +68,12 @@ var styles = () => {
     .pipe(browserSync.stream())
 }
 
-var htmlMinifyDev = () => {
+let htmlMinifyDev = () => {
   return src('src/**/*.html')
     .pipe(dest('dev'))
 }
 
-var htmlMinify = () => {
+let htmlMinify = () => {
   return src('src/**/*.html')
     .pipe(htmlMin({
       collapseWhitespace: true,
@@ -90,7 +82,7 @@ var htmlMinify = () => {
     .pipe(browserSync.stream())
 }
 
-var svgSprites = () => {
+let svgSprites = () => {
   return src('src/img/svg/**/*.svg')
     .pipe(svgSprite({
       mode: {
@@ -103,7 +95,7 @@ var svgSprites = () => {
     .pipe(dest('dev/img'))
 }
 
-var scriptsDev = () => {
+let scriptsDev = () => {
   return src('src/js/**/*.js')
     .pipe(sourcemaps.init())
     .pipe(concat('script.js'))
@@ -111,7 +103,7 @@ var scriptsDev = () => {
     .pipe(dest('dev/js'))
 }
 
-var scripts = () => {
+let scripts = () => {
   return src('src/js/**/*.js')
     .pipe(babel({
       presets: ['@babel/env']
@@ -124,7 +116,7 @@ var scripts = () => {
     .pipe(browserSync.stream())
 }
 
-var watchFiles = () => {
+let watchFiles = () => {
   browserSync.init({
     server: {
       baseDir: 'build'
@@ -132,7 +124,7 @@ var watchFiles = () => {
   })
 }
 
-var exportWebp = () => {
+let exportWebp = () => {
   return src('src/img/**/*.{jpg,jpeg,png}')
     .pipe(webp({
       lossless: true
@@ -146,7 +138,7 @@ var exportWebp = () => {
     .pipe(dest('dev/img'))
 }
 
-var images = () => {
+let images = () => {
   return src([
       'src/img/**/*.{jpg,jpeg,png}',
       'src/img/*.svg',
