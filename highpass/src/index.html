@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>High pass</title>
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+  <link rel="preload" href="fonts/roboto-v27-latin_cyrillic-regular.woff2" as="font">
+  <link rel="preload" href="fonts/roboto-v27-latin_cyrillic-700.woff2" as="font">
+  <link rel="preload" href="fonts/TTFirsNeue-Regular.woff2" as="font">
+  <link rel="preload" href="fonts/TTFirsNeue-Bold.woff2" as="font">
+  <link rel="preload" href="fonts/TTFirsNeue-Medium.woff2" as="font">
+  <link rel="preload" href="fonts/MullerRegular.woff2" as="font">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__top-bg">
+        <div class="header__top">
+          <picture class="header__logo">
+            <source srcset="../img/logo-320.webp" type="image/webp" media="(max-width: 500px)">
+            <source srcset="../img/logo-320.png" type="image/png" media="(max-width: 500px)">
+            <source srcset="../img/logo-1024.webp" type="image/webp" media="(max-width: 1024px)">
+            <source srcset="../img/logo-1024.png" type="image/png" media="(max-width: 1024px)">
+            <source srcset="../img/logo.webp" type="image/webp">
+            <source srcset="../img/logo.png" type="image/png">
+            <img src="../img/logo.png" alt="Логотип" class="header__logo-img">
+          </picture>
+          <div class="header__nav-call">
+            <a aria-label="Кнопка позвонить по номеру" class="header__call-top" href="tel:+7(495)42-423-532">
+              +7 (495) 42-423-532
+            </a>
+            <nav class="header__nav">
+              <ul class="header__nav-list">
+                <li class="header__nav-item">
+                  <a class="header__nav-link" href="#about">О студии</a>
+                </li>
+                <li class="header__nav-item">
+                  <a class="header__nav-link" href="#projects">Наши проекты</a>
+                </li>
+                <li class="header__nav-item">
+                  <a class="header__nav-link" href="#services">Услуги</a>
+                </li>
+                <li class="header__nav-item">
+                  <a class="header__nav-link" href="#classes">Мастер-классы</a>
+                </li>
+                <li class="header__nav-item">
+                  <a class="header__nav-link" href="#contacts">Контакты</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="header__social">
+            <ul class="header__social-list">
+              <li class="header__social-item header__social-item1">
+                <a aria-label="Ссылка на Инстаграм" href="#" class="header__social-link">
+                  <svg id="insta" width="30" height="30" viewbox="0 0 30 30" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M12.1289 15.0001C12.1289 16.5858 13.4143 17.8712 15 17.8712C16.5857 17.8712 17.8711 16.5858 17.8711 15.0001C17.8711 13.4144 16.5857 12.129 15 12.129C13.4143 12.129 12.1289 13.4144 12.1289 15.0001Z"
+                      fill="#CACACA" />
+                    <path
+                      d="M8.28558 9.92003C8.4236 9.54604 8.64378 9.20752 8.92989 8.92966C9.20775 8.64355 9.54604 8.42337 9.92026 8.28535C10.2238 8.16748 10.6797 8.02718 11.5195 7.98895C12.4279 7.94753 12.7003 7.9386 15.0001 7.9386C17.3001 7.9386 17.5725 7.9473 18.4807 7.98872C19.3204 8.02718 19.7766 8.16748 20.0799 8.28535C20.4541 8.42337 20.7926 8.64355 21.0702 8.92966C21.3563 9.20752 21.5765 9.54581 21.7148 9.92003C21.8326 10.2235 21.9729 10.6797 22.0112 11.5195C22.0526 12.4277 22.0615 12.7 22.0615 15.0001C22.0615 17.2999 22.0526 17.5722 22.0112 18.4807C21.9729 19.3204 21.8326 19.7764 21.7148 20.0799C21.5765 20.4541 21.3566 20.7924 21.0705 21.0702C20.7926 21.3563 20.4543 21.5765 20.0801 21.7145C19.7766 21.8326 19.3204 21.9729 18.4807 22.0112C17.5725 22.0526 17.3003 22.0613 15.0003 22.0613C12.7 22.0613 12.4277 22.0526 11.5197 22.0112C10.6799 21.9729 10.2238 21.8326 9.92026 21.7145C9.16907 21.4248 8.57535 20.8311 8.28558 20.0799C8.16771 19.7764 8.0274 19.3204 7.98895 18.4807C7.94753 17.5722 7.93883 17.2999 7.93883 15.0001C7.93883 12.7 7.94753 12.4277 7.98895 11.5195C8.02718 10.6797 8.16748 10.2235 8.28558 9.92003ZM15.0001 19.4227C17.4429 19.4227 19.4232 17.4427 19.4232 14.9998C19.4232 12.557 17.4429 10.5769 15.0001 10.5769C12.5574 10.5769 10.5771 12.557 10.5771 14.9998C10.5771 17.4427 12.5574 19.4227 15.0001 19.4227ZM10.4023 11.4357C10.9731 11.4357 11.4359 10.9729 11.4359 10.4021C11.4359 9.83122 10.9731 9.36842 10.4023 9.36842C9.83145 9.36842 9.36865 9.83122 9.36865 10.4021C9.36888 10.9729 9.83145 11.4357 10.4023 11.4357Z"
+                      fill="#CACACA" />
+                    <path
+                      d="M15 0C23.283 0 30 6.717 30 15C30 23.283 23.283 30 15 30C6.717 30 0 23.283 0 15C0 6.717 6.717 0 15 0ZM6.43867 18.5511C6.48033 19.468 6.62613 20.094 6.83899 20.6419C7.28645 21.7989 8.20107 22.7135 9.35806 23.161C9.90578 23.3739 10.532 23.5194 11.4487 23.5613C12.3672 23.6032 12.6606 23.6133 14.9998 23.6133C17.3392 23.6133 17.6324 23.6032 18.5511 23.5613C19.4678 23.5194 20.094 23.3739 20.6417 23.161C21.2167 22.9447 21.7371 22.6057 22.1674 22.1674C22.6055 21.7374 22.9445 21.2167 23.1608 20.6419C23.3736 20.0942 23.5194 19.468 23.5611 18.5513C23.6034 17.6326 23.6133 17.3392 23.6133 15C23.6133 12.6608 23.6034 12.3674 23.5613 11.4489C23.5197 10.532 23.3741 9.90601 23.1612 9.35806C22.9449 8.78334 22.6057 8.26263 22.1674 7.83257C21.7374 7.39426 21.2167 7.05528 20.6419 6.83899C20.094 6.62613 19.468 6.48056 18.5511 6.43867C17.6326 6.39679 17.3392 6.38672 15 6.38672C12.6608 6.38672 12.3674 6.39679 11.4489 6.4389C10.532 6.48056 9.90601 6.62613 9.35806 6.83876C8.78334 7.05505 8.26263 7.39426 7.83234 7.83257C7.39426 8.26286 7.05505 8.78334 6.83899 9.35806C6.6259 9.90601 6.48033 10.532 6.43845 11.4489C6.39656 12.3674 6.38672 12.6608 6.38672 15C6.38672 17.3392 6.39656 17.6326 6.43867 18.5511Z"
+                      fill="#CACACA" />
+                  </svg>
+                </a>
+              </li>
+              <li class="header__social-item header__social-item2">
+                <a aria-label="Ссылка на Фейсбук" href="#" class="header__social-link">
+                  <svg id="fb" width="30" height="30" viewbox="0 0 30 30" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15 0C6.74999 0 0 6.76205 0 15.0904C0 22.6205 5.48999 28.8705 12.66 30V19.4578H8.84999V15.0904H12.66V11.762C12.66 7.98193 14.895 5.90361 18.33 5.90361C19.965 5.90361 21.675 6.18976 21.675 6.18976V9.90964H19.785C17.925 9.90964 17.34 11.0693 17.34 12.259V15.0904H21.51L20.835 19.4578H17.34V30C20.8746 29.4395 24.0933 27.6288 26.4149 24.8947C28.7364 22.1606 30.008 18.6832 30 15.0904C30 6.76205 23.25 0 15 0Z"
+                      fill="#CACACA" />
+                  </svg>
+                </a>
+              </li>
+              <li class="header__social-item header__social-item3">
+                <a aria-label="Ссылка на Вконтакте" href="#" class="header__social-link">
+                  <svg id="vk" width="30" height="30" viewbox="0 0 30 30" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M15 0C6.71601 0 0 6.7157 0 15C0 23.2843 6.71601 30 15 30C23.284 30 30 23.2843 30 15C30 6.7157 23.284 0 15 0ZM22.6088 16.6223C23.3079 17.3052 24.0476 17.9478 24.6752 18.7013C24.9532 19.0346 25.2153 19.3792 25.4148 19.7669C25.6996 20.3196 25.4425 20.9257 24.9477 20.9586L21.8747 20.958C21.081 21.0236 20.4494 20.7035 19.9169 20.1609C19.4919 19.7285 19.0975 19.2666 18.6881 18.8194C18.5208 18.6359 18.3447 18.4631 18.1347 18.3272C17.7158 18.0546 17.3518 18.1381 17.1118 18.5758C16.8672 19.0211 16.8114 19.5146 16.788 20.0102C16.7546 20.7348 16.5361 20.9242 15.809 20.9583C14.2554 21.031 12.7814 20.7953 11.4114 20.0121C10.2028 19.3212 9.26731 18.3462 8.45217 17.2423C6.86486 15.0902 5.64921 12.7283 4.55693 10.2985C4.3111 9.7513 4.49095 9.45852 5.09463 9.44716C6.0976 9.42783 7.10056 9.43028 8.10353 9.44624C8.51171 9.45268 8.78179 9.68624 8.93862 10.0714C9.48061 11.4049 10.1451 12.6737 10.9777 13.8503C11.1996 14.1637 11.4261 14.4761 11.7486 14.6974C12.1047 14.9417 12.376 14.861 12.5438 14.4635C12.6513 14.2109 12.6976 13.9409 12.7209 13.6702C12.8007 12.743 12.8102 11.8162 12.6721 10.8927C12.5862 10.3148 12.2612 9.94158 11.6851 9.83233C11.3917 9.77678 11.4347 9.66813 11.5774 9.50056C11.8251 9.21084 12.0571 9.03161 12.5208 9.03161L15.9928 9.031C16.5401 9.13841 16.6628 9.38394 16.7371 9.93514L16.7402 13.7936C16.7337 14.0069 16.8473 14.6391 17.2303 14.7787C17.5372 14.88 17.7397 14.6339 17.9233 14.4396C18.7559 13.556 19.3492 12.5131 19.8804 11.4338C20.1149 10.9577 20.3171 10.4652 20.5136 9.97166C20.6596 9.60675 20.8868 9.42721 21.2986 9.43335L24.642 9.43734C24.7406 9.43734 24.8406 9.43826 24.9382 9.45514C25.5017 9.55151 25.6561 9.79396 25.4817 10.3436C25.2074 11.2073 24.6743 11.9266 24.1531 12.6479C23.5946 13.4201 22.9989 14.1652 22.4458 14.9408C21.9376 15.6497 21.9778 16.0066 22.6088 16.6223Z"
+                      fill="#CACACA" />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+            <div class="header__search-mobile search-mobile">
+              <form action="https://jsonplaceholder.typicode.com/posts" method="get" class="search-mobile__form">
+                <input aria-label="Поле ввода поиска" type="search" placeholder="Что будем искать?"
+                  class="search__input">
+              </form>
+              <button aria-label="Кнопка открытия поиска" class="search-mobile__btn btn-reset"></button>
+              <button aria-label="Кнопка закрытия поиска" class="search-mobile__btn-close btn-reset"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header__bottom-bg">
+        <div class="header__bottom">
+          <a aria-label="Кнопка позвонить по номеру" class="header__call" href="tel:+7(495)42-423-532">
+            +7 (495) 42-423-532
+          </a>
+          <div class="header__burger burger">
+            <button aria-label="Кнопка открытия меню сайта" class="burger__open btn-reset">
+              <svg id="openNav" width="20" height="18" viewbox="0 0 20 18" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <rect width="20" height="2" fill="white" />
+                <rect y="8" width="20" height="2" fill="white" />
+                <rect y="16" width="10" height="2" fill="white" />
+              </svg>
+            </button>
+            <button aria-label="Кнопка закрытия меню сайта" class="burger__close btn-reset">
+              <svg id="closeNav" width="18" height="18" viewbox="0 0 18 18" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="9" cy="9" r="9" fill="#808080" />
+                <rect x="5.58643" y="4.95" width="10.8" height="0.9" transform="rotate(45 5.58643 4.95)" fill="white" />
+                <rect x="5.03223" y="12.5868" width="10.8" height="0.9" transform="rotate(-45 5.03223 12.5868)"
+                  fill="white" />
+              </svg>
+            </button>
+            <nav class="header__nav-bottom">
+              <ul class="header__nav-list">
+                <li class="header__nav-item">
+                  <a class="header__nav-link" href="#about">О студии</a>
+                </li>
+                <li class="header__nav-item">
+                  <a class="header__nav-link" href="#projects">Наши проекты</a>
+                </li>
+                <li class="header__nav-item">
+                  <a class="header__nav-link" href="#services">Услуги</a>
+                </li>
+                <li class="header__nav-item">
+                  <a class="header__nav-link" href="#classes">Мастер-классы</a>
+                </li>
+                <li class="header__nav-item">
+                  <a class="header__nav-link" href="#contacts">Контакты</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <form action="https://jsonplaceholder.typicode.com/posts" method="get" class="header__search search">
+            <input aria-label="Кнопка поиска" type="submit" class="search__btn">
+            <input aria-label="Поле ввода поиска" type="search" placeholder="Что будем искать?" class="search__input">
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="last-class">
+        <div class="last-class__left">
+          <picture class="last-class__photo last-class__photo-s1-big">
+            <source srcset="../img/s1-big-320.webp" type="image/webp" media="(max-width: 500px)">
+            <source srcset="../img/s1-big-320.jpg" type="image/jpg" media="(max-width: 500px)">
+            <source srcset="../img/s1-big-768.webp" type="image/webp" media="(max-width: 800px)">
+            <source srcset="../img/s1-big-768.jpg" type="image/jpg" media="(max-width: 800px)">
+            <source srcset="../img/s1-big-1024.webp" type="image/webp" media="(max-width: 1024px)">
+            <source srcset="../img/s1-big-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+            <source srcset="../img/s1-big.webp" type="image/webp">
+            <source srcset="../img/s1-big.jpg" type="image/jpg">
+            <img src="../img/s1-big.jpg" alt="Фотография" class="last-class__img last-class__img-s1-big">
+          </picture>
+          <span class="last-class__hashtag">#мастеркласс</span>
+          <div class="last-class__left-box">
+            <span class="last-class__master">Мастер-класс от Игоря Робова</span>
+            <h1 class="last-class__heading heading">Неоновый фотосет&nbsp;2.0 7&nbsp;июля&nbsp;20:00</h1>
+            <a href="#" class="last-class__link">Узнать больше</a>
+          </div>
+        </div>
+        <div class="last-class__right">
+          <h2 class="last-class__title">Работы участников предыдущего мастер&#8209;класса</h2>
+          <div class="last-class__right-box">
+            <picture class="last-class__photo last-class__photo-s1-mid">
+              <source srcset="../img/s1-mid-320.webp" type="image/webp" media="(max-width: 500px)">
+              <source srcset="../img/s1-mid-320.jpg" type="image/jpg" media="(max-width: 500px)">
+              <source srcset="../img/s1-mid-768.webp" type="image/webp" media="(max-width: 800px)">
+              <source srcset="../img/s1-mid-768.jpg" type="image/jpg" media="(max-width: 800px)">
+              <source srcset="../img/s1-mid-1024.webp" type="image/webp" media="(max-width: 1024px)">
+              <source srcset="../img/s1-mid-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+              <source srcset="../img/s1-mid.webp" type="image/webp">
+              <source srcset="../img/s1-mid.jpg" type="image/jpg">
+              <img src="../img/s1-mid.jpg" alt="Фотография" class="last-class__img">
+            </picture>
+            <picture class="last-class__photo last-class__photo-s1-small">
+              <source srcset="../img/s1-small-1-320.webp" type="image/webp" media="(max-width: 500px)">
+              <source srcset="../img/s1-small-1-320.jpg" type="image/jpg" media="(max-width: 500px)">
+              <source srcset="../img/s1-small-1-768.webp" type="image/webp" media="(max-width: 800px)">
+              <source srcset="../img/s1-small-1-768.jpg" type="image/jpg" media="(max-width: 800px)">
+              <source srcset="../img/s1-small-1-1024.webp" type="image/webp" media="(max-width: 1024px)">
+              <source srcset="../img/s1-small-1-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+              <source srcset="../img/s1-small-1.webp" type="image/webp">
+              <source srcset="../img/s1-small-1.jpg" type="image/jpg">
+              <img src="../img/s1-small-1.jpg" alt="Фотография" class="last-class__img">
+            </picture>
+            <picture class="last-class__photo last-class__photo-s1-small">
+              <source srcset="../img/s1-small-2-320.webp" type="image/webp" media="(max-width: 500px)">
+              <source srcset="../img/s1-small-2-320.jpg" type="image/jpg" media="(max-width: 500px)">
+              <source srcset="../img/s1-small-2-768.webp" type="image/webp" media="(max-width: 800px)">
+              <source srcset="../img/s1-small-2-768.jpg" type="image/jpg" media="(max-width: 800px)">
+              <source srcset="../img/s1-small-2-1024.webp" type="image/webp" media="(max-width: 1024px)">
+              <source srcset="../img/s1-small-2-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+              <source srcset="../img/s1-small-2.webp" type="image/webp">
+              <source srcset="../img/s1-small-2.jpg" type="image/jpg">
+              <img src="../img/s1-small-2.jpg" alt="Фотография" class="last-class__img">
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="about__bg">
+          <div class="about__box">
+            <div class="about__left">
+              <h2 class="about__title title">О студии</h2>
+              <p class="about__descr">
+                В рамках спецификации современных стандартов, интерактивные прототипы, инициированные исключительно
+                синтетически, ограничены исключительно образом мышления. Предварительные выводы неутешительны:
+                высокотехнологичная концепция общественного уклада требует от нас анализа соответствующих условий
+                активизации! Следует отметить, что семантический разбор внешних противодействий фиксирует необходимость
+                распределения внутренних резервов и ресурсов. Безусловно, граница обучения кадров предоставляет широкие
+                возможности для первоочередных требований. Повседневная практика показывает, что глубокий уровень
+                погружения предполагает независимые способы реализации новых принципов формирования
+                материально&#8209;технической и кадровой базы. Приятно, граждане, наблюдать, как явные признаки
+                институционализации являются только методом политического участия и нарушающими общечеловеческие нормы
+                этики.
+              </p>
+            </div>
+            <div class="about__right">
+              <picture class="about__photo">
+                <source data-srcset="../img/s2-320.webp" type="image/webp" media="(max-width: 500px)">
+                <source data-srcset="../img/s2-320.jpg" type="image/jpg" media="(max-width: 500px)">
+                <source data-srcset="../img/s2-768.webp" type="image/webp" media="(max-width: 800px)">
+                <source data-srcset="../img/s2-768.jpg" type="image/jpg" media="(max-width: 800px)">
+                <source data-srcset="../img/s2-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s2-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s2.webp" type="image/webp">
+                <source data-srcset="../img/s2.jpg" type="image/jpg">
+                <img data-src="../img/s2.jpg" alt="Фотография" class="about__img lazyload">
+              </picture>
+              <form action="https://jsonplaceholder.typicode.com/posts" autocomplete="off" method="post"
+                class="about__form js-form">
+                <fieldset class="about__fieldset">
+                  <legend class="about__legend">Подписаться на рассылку</legend>
+                  <input aria-label="Поле ввода e-mail" type="email" placeholder="E-mail" autocomplete="off"
+                    name="email" id="email" data-validate-field="email" class="about__input">
+                  <button aria-label="Кнопка отправки e-mail" class="about__btn btn-reset">Отправить</button>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="projects">
+        <div class="projects__top">
+          <h2 class="projects__title title">Наши проекты</h2>
+        </div>
+        <div class="projects__box projects__box-1 tab-active" data-target="tabOne">
+          <div class="projects__box-sm projects__box-1-sm">
+            <div class="projects__sm">
+              <picture class="projects__photo-sm projects__photo-1-sm1">
+                <source data-srcset="../img/s3-t1-sm1-320.webp" type="image/webp" media="(max-width: 500px)">
+                <source data-srcset="../img/s3-t1-sm1-320.jpg" type="image/jpg" media="(max-width: 500px)">
+                <source data-srcset="../img/s3-t1-sm1-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s3-t1-sm1-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s3-t1-sm1.webp" type="image/webp">
+                <source data-srcset="../img/s3-t1-sm1.jpg" type="image/jpg">
+                <img data-src="../img/s3-t1-sm1.jpg" alt="Фотография" class="projects__img-sm lazyload">
+              </picture>
+              <span class="projects__hashtag">#пейзаж</span>
+              <p class="projects__info projects__info-sm">
+                Синтетически, смешаны с не уникальными данными до степени...
+              </p>
+              <span class="projects__calendar projects__calendar--dark">16 июня</span>
+            </div>
+            <div class="projects__sm">
+              <picture class="projects__photo-sm projects__photo-1-sm2">
+                <source data-srcset="../img/s3-t1-sm2-320.webp" type="image/webp" media="(max-width: 500px)">
+                <source data-srcset="../img/s3-t1-sm2-320.jpg" type="image/jpg" media="(max-width: 500px)">
+                <source data-srcset="../img/s3-t1-sm2-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s3-t1-sm2-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s3-t1-sm2.webp" type="image/webp">
+                <source data-srcset="../img/s3-t1-sm2.jpg" type="image/jpg">
+                <img data-src="../img/s3-t1-sm2.jpg" alt="Фотография" class="projects__img-sm lazyload">
+              </picture>
+              <span class="projects__hashtag">#портрет</span>
+              <p class="projects__info projects__info-sm">
+                В своём стремлении улучшить опыт мы упускаем, что явные...
+              </p>
+              <span class="projects__calendar projects__calendar--dark">28 мая</span>
+            </div>
+            <div class="projects__sm">
+              <picture class="projects__photo-sm projects__photo-1-sm3">
+                <source data-srcset="../img/s3-t1-sm3-320.webp" type="image/webp" media="(max-width: 500px)">
+                <source data-srcset="../img/s3-t1-sm3-320.jpg" type="image/jpg" media="(max-width: 500px)">
+                <source data-srcset="../img/s3-t1-sm3-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s3-t1-sm3-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s3-t1-sm3.webp" type="image/webp">
+                <source data-srcset="../img/s3-t1-sm3.jpg" type="image/jpg">
+                <img data-src="../img/s3-t1-sm3.jpg" alt="Фотография" class="projects__img-sm lazyload">
+              </picture>
+              <span class="projects__hashtag">#предмет</span>
+              <p class="projects__info projects__info-sm">
+                Равным образом, высокое качество позиционных...
+              </p>
+              <span class="projects__calendar projects__calendar--dark">14 мая</span>
+            </div>
+            <div class="projects__sm projects__sm4">
+              <picture class="projects__photo-sm projects__photo-1-sm4">
+                <source data-srcset="../img/s3-t2-sm1-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s3-t2-sm1-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s3-t2-sm1.webp" type="image/webp">
+                <source data-srcset="../img/s3-t2-sm1.jpg" type="image/jpg">
+                <img data-src="../img/s3-t2-sm1.jpg" alt="Фотография" class="projects__img-sm lazyload">
+              </picture>
+              <span class="projects__hashtag">#пейзаж</span>
+              <p class="projects__info projects__info-sm">
+                Равным образом, сложившаяся структура организации...
+              </p>
+              <span class="projects__calendar projects__calendar--dark">15 февраля</span>
+            </div>
+          </div>
+          <div class="projects__box-lg projects__box-1-lg1">
+            <picture class="projects__photo-lg projects__photo-1-lg1">
+              <source data-srcset="../img/s3-t1-lg1-320.webp" type="image/webp" media="(max-width: 500px)">
+              <source data-srcset="../img/s3-t1-lg1-320.jpg" type="image/jpg" media="(max-width: 500px)">
+              <source data-srcset="../img/s3-t1-lg1-768.webp" type="image/webp" media="(max-width: 800px)">
+              <source data-srcset="../img/s3-t1-lg1-768.jpg" type="image/jpg" media="(max-width: 800px)">
+              <source data-srcset="../img/s3-t1-lg1-1024.webp" type="image/webp" media="(max-width: 1024px)">
+              <source data-srcset="../img/s3-t1-lg1-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+              <source data-srcset="../img/s3-t1-lg1.webp" type="image/webp">
+              <source data-srcset="../img/s3-t1-lg1.jpg" type="image/jpg">
+              <img data-src="../img/s3-t1-lg1.jpg" alt="Фотография" class="projects__img-lg lazyload">
+            </picture>
+            <span class="projects__hashtag">#fuji</span>
+            <div class="projects__box-lg-content">
+              <span class="projects__calendar projects__calendar--light">9 апреля</span>
+              <h3 class="projects__lg-title">Cемантический разбор</h3>
+              <p class="projects__info projects__info-lg">
+                В рамках спецификации современных стандартов, интерактивные прототипы
+              </p>
+            </div>
+            <a href="#" class="projects__link">О проекте</a>
+          </div>
+          <div class="projects__box-lg projects__box-1-lg2">
+            <picture class="projects__photo-lg projects__photo-1-lg2">
+              <source data-srcset="../img/s3-t1-lg2-320.webp" type="image/webp" media="(max-width: 500px)">
+              <source data-srcset="../img/s3-t1-lg2-320.jpg" type="image/jpg" media="(max-width: 500px)">
+              <source data-srcset="../img/s3-t1-lg2-768.webp" type="image/webp" media="(max-width: 800px)">
+              <source data-srcset="../img/s3-t1-lg2-768.jpg" type="image/jpg" media="(max-width: 800px)">
+              <source data-srcset="../img/s3-t1-lg2-1024.webp" type="image/webp" media="(max-width: 1024px)">
+              <source data-srcset="../img/s3-t1-lg2-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+              <source data-srcset="../img/s3-t1-lg2.webp" type="image/webp">
+              <source data-srcset="../img/s3-t1-lg2.jpg" type="image/jpg">
+              <img data-src="../img/s3-t1-lg2.jpg" alt="Фотография" class="projects__img-lg lazyload">
+            </picture>
+            <span class="projects__hashtag">#проектзабвение</span>
+            <div class="projects__box-lg-content">
+              <span class="projects__calendar projects__calendar--light">20 марта</span>
+              <h3 class="projects__lg-title">Забвение</h3>
+              <p class="projects__info projects__info-lg">
+                Играет важную роль в формировании глубокомысленных рассуждений
+              </p>
+            </div>
+            <a href="#" class="projects__link">О проекте</a>
+          </div>
+          <div class="projects__box-md projects__box-1-md">
+            <div class="projects__md projects__md1">
+              <picture class="projects__photo-md projects__photo-1-md1">
+                <source data-srcset="../img/s3-t1-md1-320.webp" type="image/webp" media="(max-width: 500px)">
+                <source data-srcset="../img/s3-t1-md1-320.jpg" type="image/jpg" media="(max-width: 500px)">
+                <source data-srcset="../img/s3-t1-md1-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s3-t1-md1-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s3-t1-md1.webp" type="image/webp">
+                <source data-srcset="../img/s3-t1-md1.jpg" type="image/jpg">
+                <img data-src="../img/s3-t1-md1.jpg" alt="Фотография" class="projects__img-1-md1 lazyload">
+              </picture>
+              <span class="projects__hashtag">#ретушь</span>
+              <p class="projects__info projects__info-md">
+                Как принято считать, многие известные личности и по сей день остаются уделом либералов...
+              </p>
+              <span class="projects__calendar projects__calendar--dark">9 марта</span>
+            </div>
+            <div class="projects__md projects__md2">
+              <picture class="projects__photo-md projects__photo-1-md2">
+                <source data-srcset="../img/s3-t1-md2-320.webp" type="image/webp" media="(max-width: 500px)">
+                <source data-srcset="../img/s3-t1-md2-320.jpg" type="image/jpg" media="(max-width: 500px)">
+                <source data-srcset="../img/s3-t1-md2-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s3-t1-md2-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s3-t1-md2.webp" type="image/webp">
+                <source data-srcset="../img/s3-t1-md2.jpg" type="image/jpg">
+                <img data-src="../img/s3-t1-md2.jpg" alt="Фотография" class="projects__img-1-md2 lazyload">
+              </picture>
+              <span class="projects__hashtag">#портрет</span>
+              <p class="projects__info projects__info-md">
+                С учётом сложившейся международной обстановки, новая модель организационной...
+              </p>
+              <span class="projects__calendar projects__calendar--dark">1 марта</span>
+            </div>
+          </div>
+        </div>
+        <div class="projects__box projects__box-2" data-target="tabTwo">
+          <div class="projects__box-sm projects__box-2-sm">
+            <div class="projects__sm projects__sm1">
+              <picture class="projects__photo-sm projects__photo-2-sm1">
+                <source data-srcset="../img/s3-t2-sm1-320.webp" type="image/webp" media="(max-width: 500px)">
+                <source data-srcset="../img/s3-t2-sm1-320.jpg" type="image/jpg" media="(max-width: 500px)">
+                <source data-srcset="../img/s3-t2-sm1-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s3-t2-sm1-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s3-t2-sm1.webp" type="image/webp">
+                <source data-srcset="../img/s3-t2-sm1.jpg" type="image/jpg">
+                <img data-src="../img/s3-t2-sm1.jpg" alt="Фотография" class="projects__img-sm lazyload">
+              </picture>
+              <span class="projects__hashtag">#пейзаж</span>
+              <p class="projects__info projects__info-sm">
+                Равным образом, сложившаяся структура организации...
+              </p>
+              <span class="projects__calendar projects__calendar--dark">15 февраля</span>
+            </div>
+            <div class="projects__sm">
+              <picture class="projects__photo-sm projects__photo-2-sm2">
+                <source data-srcset="../img/s3-t2-sm2-320.webp" type="image/webp" media="(max-width: 500px)">
+                <source data-srcset="../img/s3-t2-sm2-320.jpg" type="image/jpg" media="(max-width: 500px)">
+                <source data-srcset="../img/s3-t2-sm2-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s3-t2-sm2-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s3-t2-sm2.webp" type="image/webp">
+                <source data-srcset="../img/s3-t2-sm2.jpg" type="image/jpg">
+                <img data-src="../img/s3-t2-sm2.jpg" alt="Фотография" class="projects__img-sm lazyload">
+              </picture>
+              <span class="projects__hashtag">#предмет</span>
+              <p class="projects__info projects__info-sm">
+                Безусловно, реализация намеченных плановых заданий обеспечивает...
+              </p>
+              <span class="projects__calendar projects__calendar--dark">10 февраля</span>
+            </div>
+            <div class="projects__sm">
+              <picture class="projects__photo-sm projects__photo-2-sm3">
+                <source data-srcset="../img/s3-t2-sm3-320.webp" type="image/webp" media="(max-width: 500px)">
+                <source data-srcset="../img/s3-t2-sm3-320.jpg" type="image/jpg" media="(max-width: 500px)">
+                <source data-srcset="../img/s3-t2-sm3-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s3-t2-sm3-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s3-t2-sm3.webp" type="image/webp">
+                <source data-srcset="../img/s3-t2-sm3.jpg" type="image/jpg">
+                <img data-src="../img/s3-t2-sm3.jpg" alt="Фотография" class="projects__img-sm lazyload">
+              </picture>
+              <span class="projects__hashtag">#пейзаж</span>
+              <p class="projects__info projects__info-sm">
+                Безусловно, курс на социальный национальный...
+              </p>
+              <span class="projects__calendar projects__calendar--dark">7 февраля</span>
+            </div>
+          </div>
+          <div class="projects__box-lg projects__box-2-lg1">
+            <picture class="projects__photo-lg projects__photo-2-lg1">
+              <source data-srcset="../img/s3-t2-lg1-320.webp" type="image/webp" media="(max-width: 500px)">
+              <source data-srcset="../img/s3-t2-lg1-320.jpg" type="image/jpg" media="(max-width: 500px)">
+              <source data-srcset="../img/s3-t2-lg1-768.webp" type="image/webp" media="(max-width: 800px)">
+              <source data-srcset="../img/s3-t2-lg1-768.jpg" type="image/jpg" media="(max-width: 800px)">
+              <source data-srcset="../img/s3-t2-lg1-1024.webp" type="image/webp" media="(max-width: 1024px)">
+              <source data-srcset="../img/s3-t2-lg1-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+              <source data-srcset="../img/s3-t2-lg1.webp" type="image/webp">
+              <source data-srcset="../img/s3-t2-lg1.jpg" type="image/jpg">
+              <img data-src="../img/s3-t2-lg1.jpg" alt="Фотография" class="projects__img-lg lazyload">
+            </picture>
+            <span class="projects__hashtag">#портрет</span>
+            <div class="projects__box-lg-content">
+              <span class="projects__calendar projects__calendar--light">24 февраля</span>
+              <h3 class="projects__lg-title">Спорная точка зрения</h3>
+              <p class="projects__info projects__info-lg">
+                Ясность нашей позиции очевидна: убеждённость некоторых оппонентов
+              </p>
+            </div>
+            <a href="#" class="projects__link">О проекте</a>
+          </div>
+          <div class="projects__box-lg projects__box-2-lg2">
+            <picture class="projects__photo-lg projects__photo-2-lg2">
+              <source data-srcset="../img/s3-t2-lg2-320.webp" type="image/webp" media="(max-width: 500px)">
+              <source data-srcset="../img/s3-t2-lg2-320.jpg" type="image/jpg" media="(max-width: 500px)">
+              <source data-srcset="../img/s3-t2-lg2-768.webp" type="image/webp" media="(max-width: 800px)">
+              <source data-srcset="../img/s3-t2-lg2-768.jpg" type="image/jpg" media="(max-width: 800px)">
+              <source data-srcset="../img/s3-t2-lg2-1024.webp" type="image/webp" media="(max-width: 1024px)">
+              <source data-srcset="../img/s3-t2-lg2-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+              <source data-srcset="../img/s3-t2-lg2.webp" type="image/webp">
+              <source data-srcset="../img/s3-t2-lg2.jpg" type="image/jpg">
+              <img data-src="../img/s3-t2-lg2.jpg" alt="Фотография" class="projects__img-lg lazyload">
+            </picture>
+            <span class="projects__hashtag">#проектджаз</span>
+            <div class="projects__box-lg-content projects__lg4-content">
+              <span class="projects__calendar projects__calendar--light">2 февраля</span>
+              <h3 class="projects__lg-title">Задания по разработке своевременного</h3>
+              <p class="projects__info projects__info-lg">
+                Повседневная практика показывает, что сложившаяся структура организации играет важную роль
+              </p>
+            </div>
+            <a href="#" class="projects__link">О проекте</a>
+          </div>
+          <div class="projects__box-md projects__box-2-md">
+            <div class="projects__md projects__md1--t2">
+              <picture class="projects__photo-md projects__photo-2-md1">
+                <source data-srcset="../img/s3-t2-md1-320.webp" type="image/webp" media="(max-width: 500px)">
+                <source data-srcset="../img/s3-t2-md1-320.jpg" type="image/jpg" media="(max-width: 500px)">
+                <source data-srcset="../img/s3-t2-md1-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s3-t2-md1-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s3-t2-md1.webp" type="image/webp">
+                <source data-srcset="../img/s3-t2-md1.jpg" type="image/jpg">
+                <img data-src="../img/s3-t2-md1.jpg" alt="Фотография" class="projects__img-2-md1 lazyload">
+              </picture>
+              <span class="projects__hashtag">#ретушь</span>
+              <p class="projects__info projects__info-md">
+                Идейные соображения высшего порядка, а также убеждённость некоторых оппонентов...
+              </p>
+              <span class="projects__calendar projects__calendar--dark">20 февраля</span>
+            </div>
+            <div class="projects__md projects__md2--t2">
+              <picture class="projects__photo-md projects__photo-2-md2">
+                <source data-srcset="../img/s3-t2-md2-320.webp" type="image/webp" media="(max-width: 500px)">
+                <source data-srcset="../img/s3-t2-md2-320.jpg" type="image/jpg" media="(max-width: 500px)">
+                <source data-srcset="../img/s3-t2-md2-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s3-t2-md2-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s3-t2-md2.webp" type="image/webp">
+                <source data-srcset="../img/s3-t2-md2.jpg" type="image/jpg">
+                <img data-src="../img/s3-t2-md2.jpg" alt="Фотография" class="projects__img-2-md2 lazyload">
+              </picture>
+              <span class="projects__hashtag">#портрет</span>
+              <p class="projects__info projects__info-md">
+                Прежде всего, повышение уровня гражданского сознания говорит о возможностях приоритизации...
+              </p>
+              <span class="projects__calendar projects__calendar--dark">18 февраля</span>
+            </div>
+          </div>
+        </div>
+        <div class="projects__tabs projects__tabs-bottom">
+          <button aria-label="Кнопка переключения таб 1" class="projects__btn projects__btn-1 btn-reset tab-active"
+            data-path="tabOne">1</button>
+          <button aria-label="Кнопка переключения таб 2" class="projects__btn projects__btn-2 btn-reset"
+            data-path="tabTwo">2</button>
+        </div>
+      </section>
+
+      <section id="services" class="services">
+        <div class="services__top">
+          <h2 class="services__title title">Услуги студии</h2>
+          <div class="services__tabs">
+            <button class="services__btn services__btn1 btn-reset tab-active" aria-label="Кнопка переключения на"
+              data-path="one">Основной перечень</button>
+            <button class="services__btn services__btn2 btn-reset" aria-label="Кнопка переключения на"
+              data-path="two">Услуги по ретуши</button>
+          </div>
+        </div>
+        <aside class="services__aside aside">
+          <picture class="aside__photo">
+            <source data-srcset="../img/s4-lg-1024.webp" type="image/webp" media="(max-width: 1024px)">
+            <source data-srcset="../img/s4-lg-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+            <source data-srcset="../img/s4-lg.webp" type="image/webp">
+            <source data-srcset="../img/s4-lg.jpg" type="image/jpg">
+            <img data-src="../img/s4-lg.jpg" alt="Фотография" class="aside__img lazyload">
+          </picture>
+          <div class="aside__top">
+            <span class="aside__action">Акция!</span>
+            <span class="aside__month">Только в июне</span>
+          </div>
+          <div class="aside__bottom">
+            <svg class="aside__icon" width="116" height="59" viewbox="0 0 116 59">
+              <use xlink:href="img/sprite.svg#percent"></use>
+            </svg>
+            <p class="aside__descr">1,5 часа портретной съемки + ретушь 10 снимков</p>
+            <a class="aside__link" href="#">Узнать больше</a>
+          </div>
+        </aside>
+        <div class="services__box services__box--t1 tab-active" data-target="one">
+          <ul class="services__list services__list--t1">
+            <li class="services__item services__item1--t1">
+              <picture class="services__photo">
+                <source data-srcset="../img/s4-t1-md1-768.webp" type="image/webp" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t1-md1-768.jpg" type="image/jpg" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t1-md1-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t1-md1-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t1-md1.webp" type="image/webp">
+                <source data-srcset="../img/s4-t1-md1.jpg" type="image/jpg">
+                <img data-src="../img/s4-t1-md1.jpg" alt="Фотография" class="services__img lazyload">
+              </picture>
+              <div class="services__item-box">
+                <h3 class="services__item-title">Высокий уровень вовлечения</h3>
+                <p class="services__item-descr">
+                  Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого
+                  факта.
+                </p>
+                <a class="services__item-more" href="#">Подробнее</a>
+              </div>
+            </li>
+            <li class="services__item services__item2--t1">
+              <picture class="services__photo">
+                <source data-srcset="../img/s4-t1-md2-768.webp" type="image/webp" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t1-md2-768.jpg" type="image/jpg" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t1-md2-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t1-md2-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t1-md2.webp" type="image/webp">
+                <source data-srcset="../img/s4-t1-md2.jpg" type="image/jpg">
+                <img data-src="../img/s4-t1-md2.jpg" alt="Фотография" class="services__img lazyload">
+              </picture>
+              <div class="services__item-box">
+                <h3 class="services__item-title">Диаграммы связей</h3>
+                <p class="services__item-descr services__item-descr2">
+                  Значимость этих проблем настолько очевидна, что реализация намеченных плановых заданий влечет за собой
+                  процесс.
+                </p>
+                <a class="services__item-more" href="#">Подробнее</a>
+              </div>
+            </li>
+            <li class="services__item services__item3--t1">
+              <picture class="services__photo">
+                <source data-srcset="../img/s4-t1-md3-768.webp" type="image/webp" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t1-md3-768.jpg" type="image/jpg" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t1-md3-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t1-md3-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t1-md3.webp" type="image/webp">
+                <source data-srcset="../img/s4-t1-md3.jpg" type="image/jpg">
+                <img data-src="../img/s4-t1-md3.jpg" alt="Фотография" class="services__img lazyload">
+              </picture>
+              <div class="services__item-box">
+                <h3 class="services__item-title">Высокотехнологичная концепция</h3>
+                <p class="services__item-descr">
+                  В частности, убеждённость некоторых оппонентов способствует подготовке и реализации анализа
+                  существующих паттернов.
+                </p>
+                <a class="services__item-more" href="#">Подробнее</a>
+              </div>
+            </li>
+            <li class="services__item services__item4--t1">
+              <picture class="services__photo">
+                <source data-srcset="../img/s4-t1-md4-768.webp" type="image/webp" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t1-md4-768.jpg" type="image/jpg" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t1-md4-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t1-md4-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t1-md4.webp" type="image/webp">
+                <source data-srcset="../img/s4-t1-md4.jpg" type="image/jpg">
+                <img data-src="../img/s4-t1-md4.jpg" alt="Фотография" class="services__img lazyload">
+              </picture>
+              <div class="services__item-box">
+                <h3 class="services__item-title">Сложившаяся структура организации</h3>
+                <p class="services__item-descr">
+                  Кстати, сторонники тоталитаризма в науке будут объединены в целые кластеры себе подобных.
+                </p>
+                <a class="services__item-more" href="#">Подробнее</a>
+              </div>
+            </li>
+            <li class="services__item services__item5--t1">
+              <picture class="services__photo">
+                <source data-srcset="../img/s4-t1-md5-768.webp" type="image/webp" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t1-md5-768.jpg" type="image/jpg" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t1-md5-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t1-md5-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t1-md5.webp" type="image/webp">
+                <source data-srcset="../img/s4-t1-md5.jpg" type="image/jpg">
+                <img data-src="../img/s4-t1-md5.jpg" alt="Фотография" class="services__img lazyload">
+              </picture>
+              <div class="services__item-box">
+                <h3 class="services__item-title">Внутренние резервы и ресурсы</h3>
+                <p class="services__item-descr services__item-descr5">
+                  Банальные, но неопровержимые выводы, а также ключевые особенности структуры проекта являются только
+                  методом.
+                </p>
+                <a class="services__item-more" href="#">Подробнее</a>
+              </div>
+            </li>
+          </ul>
+          <aside class="services__aside aside aside-768">
+            <picture class="aside__photo">
+              <source data-srcset="../img/s4-lg-320.webp" type="image/webp" media="(max-width: 600px)">
+              <source data-srcset="../img/s4-lg-320.jpg" type="image/jpg" media="(max-width: 600px)">
+              <source data-srcset="../img/s4-lg-768.webp" type="image/webp" media="(max-width: 800px)">
+              <source data-srcset="../img/s4-lg-768.jpg" type="image/jpg" media="(max-width: 800px)">
+              <source data-srcset="../img/s4-lg.webp" type="image/webp">
+              <source data-srcset="../img/s4-lg.jpg" type="image/jpg">
+              <img data-src="../img/s4-lg.jpg" alt="Фотография" class="aside__img lazyload">
+            </picture>
+            <div class="aside__top">
+              <span class="aside__action">Акция!</span>
+              <span class="aside__month">Только в июне</span>
+            </div>
+            <picture class="aside__icon">
+              <source data-srcset="../img/asd-320.webp" type="image/webp" media="(max-width: 600px)">
+              <source data-srcset="../img/asd-320.png" type="image/png" media="(max-width: 600px)">
+              <source data-srcset="../img/asd.webp" type="image/webp">
+              <source data-srcset="../img/asd.png" type="image/png">
+              <img data-src="../img/asd.png" alt="Скидка" class="aside__img-icon lazyload">
+            </picture>
+            <div class="aside__bottom">
+              <p class="aside__descr">1,5 часа портретной съемки + ретушь 10 снимков</p>
+              <a class="aside__link" href="#">Узнать больше</a>
+            </div>
+          </aside>
+          <div class="services__works works">
+            <h2 class="works__title title">Выполненные работы</h2>
+            <ul class="works__list works__list--t1">
+              <li class="works__item works__item1--t1">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm1-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm1-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm1-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm1-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm1.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t1-sm1.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t1-sm1.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item2--t1">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm2-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm2-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm2-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm2-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm2.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t1-sm2.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t1-sm2.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item3--t1">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm3-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm3-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm3-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm3-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm3.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t1-sm3.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t1-sm3.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item4--t1">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm4-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm4-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm4-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm4-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm4.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t1-sm4.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t1-sm4.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item5--t1">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm5-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm5-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm5-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm5-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm5.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t1-sm5.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t1-sm5.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item6--t1">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm6-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm6-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm6-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm6-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm6.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t1-sm6.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t1-sm6.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item7--t1">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm7-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm7-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm7-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm7-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm7.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t1-sm7.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t1-sm7.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item8--t1">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm8-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm8-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm8-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm8-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm8.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t1-sm8.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t1-sm8.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item9--t1">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm9-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm9-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm9-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm9-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm9.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t1-sm9.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t1-sm9.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item10--t1">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm10-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm10-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm10-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm10-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm10.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t1-sm10.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t1-sm10.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item11--t1">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm11-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm11-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm11-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm11-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm11.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t1-sm11.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t1-sm11.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item12--t1">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm12-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm12-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm12-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm12-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm12.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t1-sm12.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t1-sm12.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item13--t1">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm13-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm13-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm13-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm13-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm13.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t1-sm13.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t1-sm13.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item14--t1">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm14-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm14-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm14-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm14-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm14.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t1-sm14.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t1-sm14.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item15--t1">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm15-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm15-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm15-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm15-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm15.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t1-sm15.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t1-sm15.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item16--t1">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm16-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm16-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm16-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm16-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t1-sm16.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t1-sm16.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t1-sm16.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="services__box services__box--t2" data-target="two">
+          <ul class="services__list services__list--t2">
+            <li class="services__item services__item--t2">
+              <picture class="services__photo">
+                <source data-srcset="../img/s4-t2-md1-768.webp" type="image/webp" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t2-md1-768.jpg" type="image/jpg" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t2-md1-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t2-md1-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t2-md1.webp" type="image/webp">
+                <source data-srcset="../img/s4-t2-md1.jpg" type="image/jpg">
+                <img data-src="../img/s4-t2-md1.jpg" alt="Фотография" class="services__img lazyload">
+              </picture>
+              <div class="services__item-box services__item-box--t2">
+                <h3 class="services__item-title">Принимая во внимание показатели</h3>
+                <a class="services__item-more" href="#">Подробнее</a>
+              </div>
+            </li>
+            <li class="services__item services__item--t2">
+              <picture class="services__photo">
+                <source data-srcset="../img/s4-t2-md2-768.webp" type="image/webp" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t2-md2-768.jpg" type="image/jpg" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t2-md2-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t2-md2-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t2-md2.webp" type="image/webp">
+                <source data-srcset="../img/s4-t2-md2.jpg" type="image/jpg">
+                <img data-src="../img/s4-t2-md2.jpg" alt="Фотография" class="services__img lazyload">
+              </picture>
+              <div class="services__item-box services__item-box--t2">
+                <h3 class="services__item-title">Таким образом, выбранный нами...</h3>
+                <a class="services__item-more" href="#">Подробнее</a>
+              </div>
+            </li>
+            <li class="services__item services__item--t2">
+              <picture class="services__photo">
+                <source data-srcset="../img/s4-t2-md3-768.webp" type="image/webp" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t2-md3-768.jpg" type="image/jpg" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t2-md3-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t2-md3-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t2-md3.webp" type="image/webp">
+                <source data-srcset="../img/s4-t2-md3.jpg" type="image/jpg">
+                <img data-src="../img/s4-t2-md3.jpg" alt="Фотография" class="services__img lazyload">
+              </picture>
+              <div class="services__item-box services__item-box--t2">
+                <h3 class="services__item-title">Также как высокое качество...</h3>
+                <a class="services__item-more" href="#">Подробнее</a>
+              </div>
+            </li>
+            <li class="services__item services__item--t2">
+              <picture class="services__photo">
+                <source data-srcset="../img/s4-t2-md4-768.webp" type="image/webp" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t2-md4-768.jpg" type="image/jpg" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t2-md4-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t2-md4-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t2-md4.webp" type="image/webp">
+                <source data-srcset="../img/s4-t2-md4.jpg" type="image/jpg">
+                <img data-src="../img/s4-t2-md4.jpg" alt="Фотография" class="services__img lazyload">
+              </picture>
+              <div class="services__item-box services__item-box--t2">
+                <h3 class="services__item-title">Безусловно, семантический разбор...</h3>
+                <a class="services__item-more" href="#">Подробнее</a>
+              </div>
+            </li>
+            <li class="services__item services__item--t2">
+              <picture class="services__photo">
+                <source data-srcset="../img/s4-t2-md5-768.webp" type="image/webp" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t2-md5-768.jpg" type="image/jpg" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t2-md5-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t2-md5-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t2-md5.webp" type="image/webp">
+                <source data-srcset="../img/s4-t2-md5.jpg" type="image/jpg">
+                <img data-src="../img/s4-t2-md5.jpg" alt="Фотография" class="services__img lazyload">
+              </picture>
+              <div class="services__item-box services__item-box--t2">
+                <h3 class="services__item-title">Внезапно, предпринимате<br>ли в интернете...</h3>
+                <a class="services__item-more" href="#">Подробнее</a>
+              </div>
+            </li>
+            <li class="services__item services__item--t2">
+              <picture class="services__photo">
+                <source data-srcset="../img/s4-t2-md6-768.webp" type="image/webp" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t2-md6-768.jpg" type="image/jpg" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t2-md6-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t2-md6-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t2-md6.webp" type="image/webp">
+                <source data-srcset="../img/s4-t2-md6.jpg" type="image/jpg">
+                <img data-src="../img/s4-t2-md6.jpg" alt="Фотография" class="services__img lazyload">
+              </picture>
+              <div class="services__item-box services__item-box--t2">
+                <h3 class="services__item-title">Есть над чем подумать: активные...</h3>
+                <a class="services__item-more" href="#">Подробнее</a>
+              </div>
+            </li>
+            <li class="services__item services__item--t2">
+              <picture class="services__photo">
+                <source data-srcset="../img/s4-t2-md7-768.webp" type="image/webp" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t2-md7-768.jpg" type="image/jpg" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t2-md7-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t2-md7-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t2-md7.webp" type="image/webp">
+                <source data-srcset="../img/s4-t2-md7.jpg" type="image/jpg">
+                <img data-src="../img/s4-t2-md7.jpg" alt="Фотография" class="services__img lazyload">
+              </picture>
+              <div class="services__item-box services__item-box--t2">
+                <h3 class="services__item-title">Сделанные на базе аналитики выводы...</h3>
+                <a class="services__item-more" href="#">Подробнее</a>
+              </div>
+            </li>
+            <li class="services__item services__item--t2">
+              <picture class="services__photo">
+                <source data-srcset="../img/s4-t2-md8-768.webp" type="image/webp" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t2-md8-768.jpg" type="image/jpg" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t2-md8-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t2-md8-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t2-md8.webp" type="image/webp">
+                <source data-srcset="../img/s4-t2-md8.jpg" type="image/jpg">
+                <img data-src="../img/s4-t2-md8.jpg" alt="Фотография" class="services__img lazyload">
+              </picture>
+              <div class="services__item-box services__item-box--t2">
+                <h3 class="services__item-title">Как принято считать, сторонники...</h3>
+                <a class="services__item-more" href="#">Подробнее</a>
+              </div>
+            </li>
+            <li class="services__item services__item--t2">
+              <picture class="services__photo">
+                <source data-srcset="../img/s4-t2-md9-768.webp" type="image/webp" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t2-md9-768.jpg" type="image/jpg" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t2-md9-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t2-md9-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t2-md9.webp" type="image/webp">
+                <source data-srcset="../img/s4-t2-md9.jpg" type="image/jpg">
+                <img data-src="../img/s4-t2-md9.jpg" alt="Фотография" class="services__img lazyload">
+              </picture>
+              <div class="services__item-box services__item-box--t2">
+                <h3 class="services__item-title">Задача организации, в особенности...</h3>
+                <a class="services__item-more" href="#">Подробнее</a>
+              </div>
+            </li>
+            <li class="services__item services__item--t2">
+              <picture class="services__photo">
+                <source data-srcset="../img/s4-t2-md10-768.webp" type="image/webp" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t2-md10-768.jpg" type="image/jpg" media="(max-width: 800px)">
+                <source data-srcset="../img/s4-t2-md10-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t2-md10-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s4-t2-md10.webp" type="image/webp">
+                <source data-srcset="../img/s4-t2-md10.jpg" type="image/jpg">
+                <img data-src="../img/s4-t2-md10.jpg" alt="Фотография" class="services__img lazyload">
+              </picture>
+              <div class="services__item-box services__item-box--t2">
+                <h3 class="services__item-title">Активно развивающиеся страны...</h3>
+                <a class="services__item-more" href="#">Подробнее</a>
+              </div>
+            </li>
+          </ul>
+          <aside class="services__aside aside aside-768">
+            <picture class="aside__photo">
+              <source data-srcset="../img/s4-lg-320.webp" type="image/webp" media="(max-width: 600px)">
+              <source data-srcset="../img/s4-lg-320.jpg" type="image/jpg" media="(max-width: 600px)">
+              <source data-srcset="../img/s4-lg-768.webp" type="image/webp" media="(max-width: 800px)">
+              <source data-srcset="../img/s4-lg-768.jpg" type="image/jpg" media="(max-width: 800px)">
+              <source data-srcset="../img/s4-lg.webp" type="image/webp">
+              <source data-srcset="../img/s4-lg.jpg" type="image/jpg">
+              <img data-src="../img/s4-lg.jpg" alt="Фотография" class="aside__img lazyload">
+            </picture>
+            <div class="aside__top">
+              <span class="aside__action">Акция!</span>
+              <span class="aside__month">Только в июне</span>
+            </div>
+            <picture class="aside__icon">
+              <source data-srcset="../img/asd-320.webp" type="image/webp" media="(max-width: 600px)">
+              <source data-srcset="../img/asd-320.png" type="image/png" media="(max-width: 600px)">
+              <source data-srcset="../img/asd.webp" type="image/webp">
+              <source data-srcset="../img/asd.png" type="image/png">
+              <img data-src="../img/asd.png" alt="Скидка" class="aside__img-icon lazyload">
+            </picture>
+            <div class="aside__bottom">
+              <p class="aside__descr">1,5 часа портретной съемки + ретушь 10 снимков</p>
+              <a class="aside__link" href="#">Узнать больше</a>
+            </div>
+          </aside>
+          <div class="services__works works">
+            <h2 class="works__title title">Выполненные работы</h2>
+            <ul class="works__list works__list--t2">
+              <li class="works__item works__item1--t2">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm1-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm1-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t2-sm1-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm1-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm1.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t2-sm1.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t2-sm1.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item2--t2">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm2-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm2-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t2-sm2-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm2-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm2.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t2-sm2.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t2-sm2.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item3--t2">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm3-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm3-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t2-sm3-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm3-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm3.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t2-sm3.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t2-sm3.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item4--t2">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm4-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm4-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t2-sm4-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm4-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm4.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t2-sm4.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t2-sm4.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item5--t2">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm5-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm5-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t2-sm5-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm5-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm5.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t2-sm5.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t2-sm5.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item6--t2">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm6-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm6-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t2-sm6-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm6-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm6.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t2-sm6.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t2-sm6.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item7--t2">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm7-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm7-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t2-sm7-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm7-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm7.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t2-sm7.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t2-sm7.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item8--t2">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm8-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm8-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t2-sm8-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm8-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm8.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t2-sm8.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t2-sm8.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item9--t2">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm9-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm9-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t2-sm9-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm9-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm9.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t2-sm9.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t2-sm9.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item10--t2">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm10-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm10-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t2-sm10-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm10-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm10.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t2-sm10.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t2-sm10.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item11--t2">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm11-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm11-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t2-sm11-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm11-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm11.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t2-sm11.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t2-sm11.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item12--t2">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm12-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm12-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t2-sm12-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm12-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm12.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t2-sm12.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t2-sm12.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item13--t2">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm13-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm13-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t2-sm13-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm13-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm13.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t2-sm13.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t2-sm13.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item14--t2">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm14-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm14-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t2-sm14-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm14-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm14.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t2-sm14.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t2-sm14.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item15--t2">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm15-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm15-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t2-sm15-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm15-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm15.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t2-sm15.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t2-sm15.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+              <li class="works__item works__item16--t2">
+                <picture class="works__photo">
+                  <source data-srcset="../img/s4-t1-sm16-320.webp" type="image/webp" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t1-sm16-320.jpg" type="image/jpg" media="(max-width: 600px)">
+                  <source data-srcset="../img/s4-t2-sm16-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm16-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                  <source data-srcset="../img/s4-t2-sm16.webp" type="image/webp">
+                  <source data-srcset="../img/s4-t2-sm16.jpg" type="image/jpg">
+                  <img data-src="../img/s4-t2-sm16.jpg" alt="Фотография" class="works__img lazyload">
+                </picture>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="classes" class="classes">
+        <h2 class="classes__title title">Мастер-классы</h2>
+        <div class="classes__container container">
+          <picture class="classes__photo-lg">
+            <source data-srcset="../img/s5-lg-320.webp" type="image/webp" media="(max-width: 500px)">
+            <source data-srcset="../img/s5-lg-320.jpg" type="image/jpg" media="(max-width: 500px)">
+            <source data-srcset="../img/s5-lg-768.webp" type="image/webp" media="(max-width: 800px)">
+            <source data-srcset="../img/s5-lg-768.jpg" type="image/jpg" media="(max-width: 800px)">
+            <source data-srcset="../img/s5-lg-1024.webp" type="image/webp" media="(max-width: 1024px)">
+            <source data-srcset="../img/s5-lg-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+            <source data-srcset="../img/s5-lg.webp" type="image/webp">
+            <source data-srcset="../img/s5-lg.jpg" type="image/jpg">
+            <img data-src="../img/s5-lg.jpg" alt="Фотография" class="classes__img-lg lazyload">
+          </picture>
+          <div class="classes__info">
+            <span class="classes__calendar">8 июня</span>
+            <span class="classes__watch">15:00</span>
+            <h3 class="classes__info-title">Пленка для начинающих</h3>
+            <p class="classes__info-descr">
+              Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого
+              факта: семантический разбор внешних противодействий, в своём классическом представлении.
+            </p>
+            <a class="classes__info-link" href="#">Узнать больше</a>
+          </div>
+          <ul class="classes__list">
+            <li class="classes__item classes__item1">
+              <picture class="classes__photo-sm">
+                <source data-srcset="../img/s5-sm1-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s5-sm1-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s5-sm1.webp" type="image/webp">
+                <source data-srcset="../img/s5-sm1.jpg" type="image/jpg">
+                <img data-src="../img/s5-sm1.jpg" alt="Фотография" class="classes__img-sm lazyload">
+              </picture>
+              <div class="classes__item-box">
+                <span class="classes__calendar classes__item-calendar">9 июня</span>
+                <span class="classes__watch">15:00</span>
+                <h3 class="classes__item-title">Ретушь. Продвинутый уровень</h3>
+              </div>
+            </li>
+            <li class="classes__item classes__item2">
+              <picture class="classes__photo-sm">
+                <source data-srcset="../img/s5-sm2-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s5-sm2-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s5-sm2.webp" type="image/webp">
+                <source data-srcset="../img/s5-sm2.jpg" type="image/jpg">
+                <img data-src="../img/s5-sm2.jpg" alt="Фотография" class="classes__img-sm lazyload">
+              </picture>
+              <div class="classes__item-box classes__item-box2">
+                <span class="classes__calendar classes__item-calendar">10 июня</span>
+                <span class="classes__watch">16:00</span>
+                <h3 class="classes__item-title">Портретная съемка. Свет</h3>
+              </div>
+            </li>
+            <li class="classes__item classes__item3">
+              <picture class="classes__photo-sm">
+                <source data-srcset="../img/s5-sm3-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s5-sm3-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s5-sm3.webp" type="image/webp">
+                <source data-srcset="../img/s5-sm3.jpg" type="image/jpg">
+                <img data-src="../img/s5-sm3.jpg" alt="Фотография" class="classes__img-sm lazyload">
+              </picture>
+              <div class="classes__item-box">
+                <span class="classes__calendar classes__item-calendar">11 июня</span>
+                <span class="classes__watch">16:00</span>
+                <h3 class="classes__item-title">Макросъемка. Проблемы и нюансы</h3>
+              </div>
+            </li>
+            <li class="classes__item classes__item4">
+              <picture class="classes__photo-sm">
+                <source data-srcset="../img/s5-sm4-1024.webp" type="image/webp" media="(max-width: 1024px)">
+                <source data-srcset="../img/s5-sm4-1024.jpg" type="image/jpg" media="(max-width: 1024px)">
+                <source data-srcset="../img/s5-sm4.webp" type="image/webp">
+                <source data-srcset="../img/s5-sm4.jpg" type="image/jpg">
+                <img data-src="../img/s5-sm4.jpg" alt="Фотография" class="classes__img-sm lazyload">
+              </picture>
+              <div class="classes__item-box classes__item-box4">
+                <span class="classes__calendar classes__item-calendar">13 июня</span>
+                <span class="classes__watch">18:00</span>
+                <h3 class="classes__item-title">Творческая ретушь для начинающих</h3>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contacts" class="contacts">
+        <h2 class="contacts__title title">Контакты</h2>
+        <div class="contacts__container container">
+          <div class="contacts__map" id="map">
+            <div class="contacts__map-content">
+              <button class="contacts__map-btn btn-reset">
+                <svg id="close" width="20" height="20" viewbox="0 0 20 20" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="10" cy="10" r="10" fill="#666666" />
+                  <rect x="6.20709" y="5.5" width="12" height="1" transform="rotate(45 6.20709 5.5)" fill="white" />
+                  <rect x="5.59137" y="13.9854" width="12" height="1" transform="rotate(-45 5.59137 13.9854)"
+                    fill="white" />
+                </svg>
+              </button>
+              <div class="contacts__map-info">
+                <h3 class="contacts__map-title">Студия “High pass”</h3>
+                <address class="contacts__address">
+                  107045, Москва, Даев переулок, дом 41, бизнес-центр «Даев Плаза», этаж 8, офис № 82
+                </address>
+                <a aria-label="Кнопка позвонить по номеру" class="contacts__call" href="tel:+7(495)42-423-532">
+                  +7 (495) 42-423-532
+                </a>
+              </div>
+            </div>
+          </div>
+          <form class="contacts__form js-form2 form" action="https://jsonplaceholder.typicode.com/posts" autocomplete="off" method="POST">
+            <fieldset class="contacts__fieldset">
+              <legend class="contacts__legend">
+                Оставить заявку
+              </legend>
+              <p class="contacts__form-descr">
+                Оставьте ваши данные, указав в графе “Комментарий” желаемые время и дату съемки или другого мероприятия
+              </p>
+              <input class="contacts__input form__name" aria-label="Введите имя" type="text" placeholder="Имя"
+              autocomplete="off" data-validate-field="name" name="name" id="name">
+              <input class="contacts__input" aria-label="Введите e-mail" type="email" placeholder="E-mail"
+              autocomplete="off" data-validate-field="email" name="email">
+              <textarea class="contacts__textarea" aria-label="Введите комментарий" name="comment" placeholder="Комментарий"></textarea>
+              <input class="contacts__btn" aria-label="Кнопка отправить форму" type="submit" value="Отправить">
+            </fieldset>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__container container">
+        <div class="footer__left">
+          <picture class="footer__logo">
+            <source srcset="../img/logo-320.webp" type="image/webp" media="(max-width: 500px)">
+            <source srcset="../img/logo-320.png" type="image/png" media="(max-width: 500px)">
+            <source srcset="../img/logo-1024.webp" type="image/webp" media="(max-width: 1024px)">
+            <source srcset="../img/logo-1024.png" type="image/png" media="(max-width: 1024px)">
+            <source srcset="../img/logo.webp" type="image/webp">
+            <source srcset="../img/logo.png" type="image/png">
+            <img src="../img/logo.png" alt="Логотип" class="footer__logo-img">
+          </picture>
+          <span class="footer__left-info">Фотостудия High pass® 2018-2020</span>
+        </div>
+        <blockquote class="footer__mid">
+          <p class="footer__quote">Которая из моих фотографий самая любимая? Та, которую я собираюсь снять завтра.</p>
+          <cite class="footer__cite">© Имоджен Каннингем</cite>
+        </blockquote>
+        <div class="footer__right">
+          <span class="footer__more">Больше интересного:</span>
+          <ul class="footer__social-list">
+            <li class="footer__social-item footer__social-item1">
+              <a aria-label="Ссылка на Инстаграм" href="#" class="header__social-link">
+                <svg width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12.1289 15.0001C12.1289 16.5858 13.4143 17.8712 15 17.8712C16.5857 17.8712 17.8711 16.5858 17.8711 15.0001C17.8711 13.4144 16.5857 12.129 15 12.129C13.4143 12.129 12.1289 13.4144 12.1289 15.0001Z"
+                    fill="#CACACA" />
+                  <path
+                    d="M8.28558 9.92003C8.4236 9.54604 8.64378 9.20752 8.92989 8.92966C9.20775 8.64355 9.54604 8.42337 9.92026 8.28535C10.2238 8.16748 10.6797 8.02718 11.5195 7.98895C12.4279 7.94753 12.7003 7.9386 15.0001 7.9386C17.3001 7.9386 17.5725 7.9473 18.4807 7.98872C19.3204 8.02718 19.7766 8.16748 20.0799 8.28535C20.4541 8.42337 20.7926 8.64355 21.0702 8.92966C21.3563 9.20752 21.5765 9.54581 21.7148 9.92003C21.8326 10.2235 21.9729 10.6797 22.0112 11.5195C22.0526 12.4277 22.0615 12.7 22.0615 15.0001C22.0615 17.2999 22.0526 17.5722 22.0112 18.4807C21.9729 19.3204 21.8326 19.7764 21.7148 20.0799C21.5765 20.4541 21.3566 20.7924 21.0705 21.0702C20.7926 21.3563 20.4543 21.5765 20.0801 21.7145C19.7766 21.8326 19.3204 21.9729 18.4807 22.0112C17.5725 22.0526 17.3003 22.0613 15.0003 22.0613C12.7 22.0613 12.4277 22.0526 11.5197 22.0112C10.6799 21.9729 10.2238 21.8326 9.92026 21.7145C9.16907 21.4248 8.57535 20.8311 8.28558 20.0799C8.16771 19.7764 8.0274 19.3204 7.98895 18.4807C7.94753 17.5722 7.93883 17.2999 7.93883 15.0001C7.93883 12.7 7.94753 12.4277 7.98895 11.5195C8.02718 10.6797 8.16748 10.2235 8.28558 9.92003ZM15.0001 19.4227C17.4429 19.4227 19.4232 17.4427 19.4232 14.9998C19.4232 12.557 17.4429 10.5769 15.0001 10.5769C12.5574 10.5769 10.5771 12.557 10.5771 14.9998C10.5771 17.4427 12.5574 19.4227 15.0001 19.4227ZM10.4023 11.4357C10.9731 11.4357 11.4359 10.9729 11.4359 10.4021C11.4359 9.83122 10.9731 9.36842 10.4023 9.36842C9.83145 9.36842 9.36865 9.83122 9.36865 10.4021C9.36888 10.9729 9.83145 11.4357 10.4023 11.4357Z"
+                    fill="#CACACA" />
+                  <path
+                    d="M15 0C23.283 0 30 6.717 30 15C30 23.283 23.283 30 15 30C6.717 30 0 23.283 0 15C0 6.717 6.717 0 15 0ZM6.43867 18.5511C6.48033 19.468 6.62613 20.094 6.83899 20.6419C7.28645 21.7989 8.20107 22.7135 9.35806 23.161C9.90578 23.3739 10.532 23.5194 11.4487 23.5613C12.3672 23.6032 12.6606 23.6133 14.9998 23.6133C17.3392 23.6133 17.6324 23.6032 18.5511 23.5613C19.4678 23.5194 20.094 23.3739 20.6417 23.161C21.2167 22.9447 21.7371 22.6057 22.1674 22.1674C22.6055 21.7374 22.9445 21.2167 23.1608 20.6419C23.3736 20.0942 23.5194 19.468 23.5611 18.5513C23.6034 17.6326 23.6133 17.3392 23.6133 15C23.6133 12.6608 23.6034 12.3674 23.5613 11.4489C23.5197 10.532 23.3741 9.90601 23.1612 9.35806C22.9449 8.78334 22.6057 8.26263 22.1674 7.83257C21.7374 7.39426 21.2167 7.05528 20.6419 6.83899C20.094 6.62613 19.468 6.48056 18.5511 6.43867C17.6326 6.39679 17.3392 6.38672 15 6.38672C12.6608 6.38672 12.3674 6.39679 11.4489 6.4389C10.532 6.48056 9.90601 6.62613 9.35806 6.83876C8.78334 7.05505 8.26263 7.39426 7.83234 7.83257C7.39426 8.26286 7.05505 8.78334 6.83899 9.35806C6.6259 9.90601 6.48033 10.532 6.43845 11.4489C6.39656 12.3674 6.38672 12.6608 6.38672 15C6.38672 17.3392 6.39656 17.6326 6.43867 18.5511Z"
+                    fill="#CACACA" />
+                </svg>
+              </a>
+            </li>
+            <li class="footer__social-item footer__social-item2">
+              <a aria-label="Ссылка на Фейсбук" href="#" class="header__social-link">
+                <svg width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15 0C6.74999 0 0 6.76205 0 15.0904C0 22.6205 5.48999 28.8705 12.66 30V19.4578H8.84999V15.0904H12.66V11.762C12.66 7.98193 14.895 5.90361 18.33 5.90361C19.965 5.90361 21.675 6.18976 21.675 6.18976V9.90964H19.785C17.925 9.90964 17.34 11.0693 17.34 12.259V15.0904H21.51L20.835 19.4578H17.34V30C20.8746 29.4395 24.0933 27.6288 26.4149 24.8947C28.7364 22.1606 30.008 18.6832 30 15.0904C30 6.76205 23.25 0 15 0Z"
+                    fill="#CACACA" />
+                </svg>
+              </a>
+            </li>
+            <li class="footer__social-item footer__social-item3">
+              <a aria-label="Ссылка на Вконтакте" href="#" class="header__social-link">
+                <svg width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15 0C6.71601 0 0 6.7157 0 15C0 23.2843 6.71601 30 15 30C23.284 30 30 23.2843 30 15C30 6.7157 23.284 0 15 0ZM22.6088 16.6223C23.3079 17.3052 24.0476 17.9478 24.6752 18.7013C24.9532 19.0346 25.2153 19.3792 25.4148 19.7669C25.6996 20.3196 25.4425 20.9257 24.9477 20.9586L21.8747 20.958C21.081 21.0236 20.4494 20.7035 19.9169 20.1609C19.4919 19.7285 19.0975 19.2666 18.6881 18.8194C18.5208 18.6359 18.3447 18.4631 18.1347 18.3272C17.7158 18.0546 17.3518 18.1381 17.1118 18.5758C16.8672 19.0211 16.8114 19.5146 16.788 20.0102C16.7546 20.7348 16.5361 20.9242 15.809 20.9583C14.2554 21.031 12.7814 20.7953 11.4114 20.0121C10.2028 19.3212 9.26731 18.3462 8.45217 17.2423C6.86486 15.0902 5.64921 12.7283 4.55693 10.2985C4.3111 9.7513 4.49095 9.45852 5.09463 9.44716C6.0976 9.42783 7.10056 9.43028 8.10353 9.44624C8.51171 9.45268 8.78179 9.68624 8.93862 10.0714C9.48061 11.4049 10.1451 12.6737 10.9777 13.8503C11.1996 14.1637 11.4261 14.4761 11.7486 14.6974C12.1047 14.9417 12.376 14.861 12.5438 14.4635C12.6513 14.2109 12.6976 13.9409 12.7209 13.6702C12.8007 12.743 12.8102 11.8162 12.6721 10.8927C12.5862 10.3148 12.2612 9.94158 11.6851 9.83233C11.3917 9.77678 11.4347 9.66813 11.5774 9.50056C11.8251 9.21084 12.0571 9.03161 12.5208 9.03161L15.9928 9.031C16.5401 9.13841 16.6628 9.38394 16.7371 9.93514L16.7402 13.7936C16.7337 14.0069 16.8473 14.6391 17.2303 14.7787C17.5372 14.88 17.7397 14.6339 17.9233 14.4396C18.7559 13.556 19.3492 12.5131 19.8804 11.4338C20.1149 10.9577 20.3171 10.4652 20.5136 9.97166C20.6596 9.60675 20.8868 9.42721 21.2986 9.43335L24.642 9.43734C24.7406 9.43734 24.8406 9.43826 24.9382 9.45514C25.5017 9.55151 25.6561 9.79396 25.4817 10.3436C25.2074 11.2073 24.6743 11.9266 24.1531 12.6479C23.5946 13.4201 22.9989 14.1652 22.4458 14.9408C21.9376 15.6497 21.9778 16.0066 22.6088 16.6223Z"
+                    fill="#CACACA" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_API-ключ&lang=ru_RU"></script>
+  <script src="libs/gsap.min.js"></script>
+  <script src="libs/lazysizes.min.js"></script>
+  <script src="libs/just-validate.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

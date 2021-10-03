@@ -1,0 +1,154 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+
+@font-face {
+  font-family: "Roboto";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  src: local(""),
+    url("../fonts/roboto-v27-latin_cyrillic-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+  src: local(""),
+    url("../fonts/roboto-v27-latin_cyrillic-700.woff") format("woff");
+}
+
+@font-face {
+  font-family: "TT Firs Neue";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  src: local(""),
+    url("../fonts/TTFirsNeue-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "TT Firs Neue";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+  src: local(""),
+    url("../fonts/TTFirsNeue-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "TT Firs Neue";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+  src: local(""),
+    url("../fonts/TTFirsNeue-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Muller";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  src: local(""),
+    url("../fonts/MullerRegular.woff") format("woff");
+}
+
+body.lock {
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.btn-reset {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0)
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 62.5%;
+}
+
+.wrapper {
+  display: grid;
+  grid-template: minmax(100px, auto) 1fr minmax(100px, auto) / 1fr;
+  grid-template-areas:
+  "header"
+  "main"
+  "footer";
+  min-height: 100vh;
+  background-color: $color-bg-light;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 31px;
+  max-width: 1352px;
+}
+
+a,
+button,
+input {
+  cursor: pointer;
+  transition-property: color, background, background-color, border, opacity;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+svg rect,
+svg path {
+  transition: fill .3s ease-in-out;
+}
+
+a:focus-visible {
+  outline: none;
+  background-color: $focus;
+}
+
+input:focus-visible,
+button:focus-visible {
+  outline: none;
+}
+

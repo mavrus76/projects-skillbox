@@ -1,0 +1,361 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+
+.contacts {
+  padding: 40px 0 68px;
+
+  &__title {
+    @include container;
+    margin-bottom: 22px;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: minmax(auto, 850px) 1fr;
+    column-gap: 30px;
+  }
+
+  &__map {
+    position: relative;
+    max-width: 850px;
+    width: 100%;
+    height: 460px;
+  }
+
+  &__map-content {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    grid-template-columns: 1fr;
+    width: 48.2%;
+    height: 100%;
+    padding: 20px;
+    background-color: rgba(32, 32, 32, 0.85);
+  }
+
+  &__map-btn {
+    justify-self: end;
+    align-self: start;
+  }
+
+  &__map-info {
+    justify-self: center;
+    align-self: center;
+    max-width: 293px;
+  }
+
+  &__map-title {
+    margin-bottom: 5px;
+    font: 24px/22px $font-TTFN;
+    color: $color-text-light;
+  }
+
+  &__address {
+    margin-bottom: 4px;
+    font: 16px/28px $font-Roboto;
+    color: $color-text-mid;
+  }
+
+  &__call {
+    display: inline-block;
+    padding-left: 24px;
+    font: 16px/21px $font-TTFN;
+    color: $color-text-light;
+    background: url('../img/callMap.svg') no-repeat left center;
+  }
+
+  &__call:focus-visible {
+    background-color: $focus;
+  }
+
+  &__call:hover {
+    color: $hover;
+    background: url('../img/callMap-hover.svg') no-repeat left center;
+  }
+
+  &__call:active {
+    color: $active;
+    background: url('../img/callMap-active.svg') no-repeat left center;
+  }
+
+  &__fieldset {
+    display: grid;
+    border: none;
+    padding: 0;
+  }
+
+  &__legend {
+    font: 24px/22px $font-TTFN;
+    color: $color-text-dark;
+    transform: translateY(-6px);
+  }
+
+  &__form-descr {
+    margin-bottom: 14px;
+    font: 16px/22px $font-Roboto;
+    color: $calendar-text;
+  }
+
+  &__input,
+  &__textarea {
+    margin-bottom: 20px;
+    border: none;
+    padding: 0 0 0 23px;
+    font: 16px/19px $font-Roboto;
+    color: $color-text-dark;
+    background-color: $color-search;
+  }
+
+  &__input::placeholder,
+  &__textarea::placeholder {
+    color: $calendar-text;
+  }
+
+  &__input {
+    height: 50px;
+  }
+
+  &__input~.js-validate-error-label {
+    position: relative;
+  }
+
+  &__input:focus-visible {
+    border: 1px solid $hover;
+  }
+
+  &__input:hover::placeholder {
+    color: $hover;
+  }
+
+  &__textarea {
+    height: 150px;
+    padding-top: 15px;
+    resize: none;
+  }
+
+  &__textarea:focus-visible {
+    outline: none;
+    border: 1px solid $hover;
+  }
+
+  &__textarea:hover::placeholder {
+    color: $hover;
+  }
+
+  &__btn {
+    border: none;
+    width: 126px;
+    height: 50px;
+    font: 700 16px/19px $font-Roboto;
+    color: $color-text-light;
+    background-color: $hover;
+  }
+
+  &__btn:focus-visible {
+    border: 3px solid $active;
+  }
+
+  &__btn:hover {
+    background-color: $focus;
+  }
+
+  &__btn:active {
+    background-color: $active;
+  }
+}
+
+[class*="ground-pane"] {
+  filter: grayscale(1);
+}
+
+[class*="copyrights-pane"] {
+  display: none !important;
+}
+
+@media (max-width: 1024px) {
+  .contacts {
+    padding: 40px 0 66px;
+
+    &__container {
+      grid-template-columns: minmax(auto, 590px) minmax(auto, 342px);
+      justify-content: center;
+    }
+
+    &__map {
+      max-width: 590px;
+      width: 100%;
+    }
+
+    &__map-content {
+      bottom: 0;
+      grid-template-rows: 1fr;
+      grid-template-columns: max-content 1fr;
+      padding-left: 30px;
+      width: 100%;
+      height: 34.5%;
+    }
+
+    &__map-btn {
+      grid-row: 1 / 2;
+      grid-column: 2 / 3;
+      justify-self: end;
+      align-self: start;
+    }
+
+    &__map-info {
+      justify-self: start;
+      align-self: center;
+      max-width: 300px;
+      padding-top: 4px;
+    }
+
+    &__address {
+      display: inline;
+    }
+
+    &__call {
+      margin-left: 10px;
+      color: $hover;
+      background: url('../img/callMap-hover.svg') no-repeat left center;
+    }
+
+    &__form {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contacts {
+    padding: 40px 0 70px;
+
+    &__title {
+      padding: 0 27px;
+    }
+
+    &__container {
+      grid-template-rows: 1fr auto;
+      grid-template-columns: 1fr;
+      column-gap: 0;
+      row-gap: 23px;
+      padding: 0 27px;
+    }
+
+    &__map {
+      max-width: 714px;
+      width: 100%;
+    }
+
+    &__map-info {
+      max-width: 436px;
+      padding-top: 4px;
+    }
+
+    &__address {
+      display: inline-block;
+    }
+
+    &__call {
+      margin-left: 0;
+    }
+
+    &__form {
+      max-width: 466px;
+      transform: translateY(0)
+    }
+
+    &__legend {
+      margin-bottom: 4px;
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .contacts {
+    padding: 32px 0 50px;
+
+    &__title {
+      margin-bottom: 14px;
+      padding: 0 21px;
+    }
+
+    &__container {
+      grid-template-rows: auto auto;
+      grid-template-columns: 1fr;
+      column-gap: 0;
+      row-gap: 23px;
+      padding: 0;
+    }
+
+    &__map {
+      height: 472px;
+    }
+
+    &__map-content {
+      bottom: 0;
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr;
+      padding-left: 20px;
+      padding-bottom: 14px;
+      width: 100%;
+      height: 33%;
+    }
+
+    &__map-info {
+      max-width: 268px;
+    }
+
+    &__map-title {
+      margin-bottom: 10px;
+      font: 18px/22px $font-TTFN;
+    }
+
+    &__address {
+      margin-bottom: 11px;
+      font: 14px/18px $font-Roboto;
+    }
+
+    &__call {
+      padding-left: 19px;
+      font: 500 14px/18px $font-TTFN;
+    }
+
+    &__form {
+      justify-self: center;
+      max-width: 278px;
+    }
+
+    &__legend {
+      margin-bottom: 7px;
+      font: 18px/22px $font-TTFN;
+    }
+
+    &__form-descr {
+      margin-bottom: 16px;
+      font: 14px/18px $font-Roboto;
+    }
+
+    &__input,
+    &__textarea {
+      font: 14px/16px $font-Roboto;
+    }
+
+    &__input {
+      height: 40px;
+    }
+
+    &__textarea {
+      padding-top: 12px;
+    }
+
+    &__btn {
+      width: 115px;
+      height: 40px;
+      font: 700 14px/16px $font-Roboto;
+    }
+  }
+}

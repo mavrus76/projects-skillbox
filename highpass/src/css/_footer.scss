@@ -1,0 +1,120 @@
+.footer {
+  grid-area: footer;
+  background-color: $color-bg-dark;
+
+  &__container {
+    display: grid;
+    grid-template-rows: minmax(106px, auto);
+    grid-template-columns: auto 361px auto;
+    align-items: center;
+  }
+
+  &__left {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr;
+  }
+
+  &__logo {
+    margin-bottom: 5px;
+  }
+
+  &__left-info {
+    font: 14px/18px $font-TTFN;
+    color: $color-search;
+  }
+
+  &__mid {
+    font: 16px/22px $font-Roboto;
+    color: $color-text-mid;
+    transform: translate(-7px, 4px);
+  }
+
+  &__cite {
+    font-style: normal;
+    color: $color-cite;
+  }
+
+  &__right {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr;
+    justify-self: end;
+    width: 161px;
+  }
+
+  &__more {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    margin-bottom: 8px;
+    font-family: $font-Roboto;
+    @include font-n400;
+    @include font-16-22;
+    color: $color-text-mid;
+  }
+
+  &__social-list {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer {
+
+    &__container {
+      padding: 0 31px;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .footer {
+
+    &__container {
+      grid-template-columns: auto auto;
+      padding: 0 27px;
+    }
+
+    &__mid {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .footer {
+    background-image: linear-gradient(to bottom, #202020 0, #202020 123px, #4A4A4A 123px, #4A4A4A 185px);
+
+    &__container {
+      grid-template-rows: 123px 62px;
+      grid-template-columns: 1fr;
+      padding: 0;
+    }
+
+    &__right {
+      grid-row: 1 / 2;
+      grid-column: 1 / 2;
+      justify-self: center;
+    }
+
+    &__left {
+      display: grid;
+      grid-row: 2 / 3;
+      grid-column: 1 / 2;
+      justify-self: center;
+    }
+
+    &__logo {
+      justify-self: center;
+    }
+
+    &__left-info {
+      font: 10px/13px $font-Roboto;
+    }
+  }
+}
