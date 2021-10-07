@@ -30,18 +30,9 @@
     "gulp-webp": "^4.0.1",
     "sass": "^1.42.1"
   },
-  "browserslist": {
-    "production": [
-      ">1%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version",
-      "last 1 opera version",
-      "last 1 edge version"
-    ]
-  }
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "maintained node versions"
+  ]
 }
