@@ -44,7 +44,8 @@ let scss = () => {
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixes({
-      cascade: false
+      cascade: false,
+      grid: true,
     }))
     .pipe(sourcemaps.write())
     .pipe(dest('src/css'))
@@ -168,5 +169,6 @@ watch([
 exports.clean = clean
 exports.styles = styles
 exports.scripts = scripts
+exports.scss = scss
 exports.htmlMinify = htmlMinify
 exports.default = series(clean, resources, fonts, scss, htmlMinifyDev, htmlMinify, scriptsDev, scripts, stylesDev, styles, exportWebp, images, svgSprites, watchFiles)
