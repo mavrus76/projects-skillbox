@@ -1,7 +1,5 @@
-/* eslint-disable no-restricted-globals */
-/* eslint-disable comma-dangle */
 /* eslint-disable guard-for-in */
-/* eslint-disable no-unused-vars */
+/* eslint-disable no-restricted-globals */
 (() => {
   const VOLUME_CARDS = 16;
   const ARRAY_DIGIT = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8];
