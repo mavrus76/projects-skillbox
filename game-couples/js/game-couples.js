@@ -2,7 +2,8 @@
 /* eslint-disable no-restricted-globals */
 (() => {
   const VOLUME_CARDS = 16;
-  const ARRAY_DIGIT = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8];
+  const VOLUME_COUPLES = 8;
+  // const ARRAY_DIGIT = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8];
   const TEXT_BUTTON_NEXT = 'Сыграть ещё раз';
 
   function createAppTitle(title) {
@@ -11,6 +12,32 @@
     appTitle.innerHTML = title;
     return appTitle;
   }
+
+  function createArrayDigit(range) {
+    let i = 0;
+    const arr = [];
+    while (i < 2) {
+      for (let num = 1; num < range + 1; num++) {
+        arr.push(num);
+      }
+      i++;
+    }
+    return arr;
+  }
+
+  // function runTimer(cardCount) {
+  //   const timer = setTimeout(() => {
+  //     confirm('Время вышло! Продолжить?');
+  //   }, 60000);
+
+  //   const counter = document.createElement('div');
+  //   const ulFull = createGameList(cardCount, timer);
+
+  //   counter.append(ulFull);
+  //   container.append(counter);
+  // }
+
+  // runTimer(cardCount);
 
   function shuffle(arr) {
     for (const i in arr) {
@@ -44,7 +71,7 @@
     const gameAppTitle = createAppTitle(title);
     const gameList = createGameList();
     const nextGame = createButtonNext();
-    const cards = ARRAY_DIGIT;
+    const cards = createArrayDigit(VOLUME_COUPLES);
 
     shuffle(cards);
 

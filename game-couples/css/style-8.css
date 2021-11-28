@@ -1,0 +1,9 @@
+.list-cards {
+  grid-template-rows:
+    minmax(50px, 61px) minmax(50px, 61px)
+    minmax(50px, 61px) minmax(50px, 61px)
+    minmax(50px, 61px) minmax(50px, 61px)
+    minmax(50px, 61px) minmax(50px, 61px);
+  grid-template-columns: repeat(8, 1fr);
+  gap: 10px;
+}
