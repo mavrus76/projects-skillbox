@@ -3,7 +3,6 @@
 (() => {
   const VOLUME_CARDS = 36;
   const VOLUME_COUPLES = 18;
-  // const ARRAY_DIGIT = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8];
   const TEXT_BUTTON_NEXT = 'Сыграть ещё раз';
 
   function createAppTitle(title) {
@@ -24,20 +23,6 @@
     }
     return arr;
   }
-
-  // function runTimer(cardCount) {
-  //   const timer = setTimeout(() => {
-  //     confirm('Время вышло! Продолжить?');
-  //   }, 60000);
-
-  //   const counter = document.createElement('div');
-  //   const ulFull = createGameList(cardCount, timer);
-
-  //   counter.append(ulFull);
-  //   container.append(counter);
-  // }
-
-  // runTimer(cardCount);
 
   function shuffle(arr) {
     for (const i in arr) {

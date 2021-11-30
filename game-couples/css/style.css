@@ -29,10 +29,11 @@ ul {
 .menu {
   display: flex;
   justify-content: space-around;
+  margin-top: 10px;
 }
 
 .variant {
-  font-size: 3em;
+  font-size: 2.5em;
   font-weight: 600;
 }
 
