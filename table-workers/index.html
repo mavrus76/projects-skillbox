@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>WORKERS</title>
+  <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+
+  <script defer type="module" src="./js/main.js"></script>
+</head>
+
+<body>
+  <section class="main">
+    <div class="container">
+      <h1>Сотрудники</h1>
+      <form class="mb-3" action="" id="add-worker">
+        <div class="mb-3">
+          <input class="form-control" type="text" placeholder="Фамилия" id="input-surname">
+        </div>
+        <div class="mb-3">
+          <input class="form-control" type="text" placeholder="Имя" id="input-name">
+        </div>
+        <div class="mb-3">
+          <input class="form-control" type="text" placeholder="Отчество" id="input-lastName">
+        </div>
+        <div class="mb-3">
+          <input class="form-control" type="number" placeholder="Начало работы" id="input-workStart">
+        </div>
+        <div class="mb-3">
+          <input class="form-control" type="date" id="input-birthDate">
+        </div>
+        <div class="mb-3">
+          <input class="form-control" type="text" placeholder="Должность" id="input-post">
+        </div>
+        <button class="btn btn-primary">Добавить</button>
+      </form>
+      <table class="workers-table table table-striped">
+        <thead>
+          <tr>
+            <th data-column="fullName">ФИО</th>
+            <th data-column="birthDate">Дата рождения</th>
+            <th data-column="workStart">Время работы</th>
+            <th data-column="post">Должность</th>
+          </tr>
+        </thead>
+        <tbody id="workers-list"></tbody>
+      </table>
+    </div>
+  </section>
+
+</body>
+
+</html>
