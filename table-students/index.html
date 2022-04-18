@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Список студентов</title>
+  <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script defer src="./js/add-student-app.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <form class="filters" id="filters">
+      <label class="filter filter-name">
+        Фильтр по ФИО:
+        <input class="search" type="text" id="filterName" placeholder="Поиск">
+      </label>
+      <label class="filter filter-faculty">
+        Фильтр по факультету:
+        <input class="search" type="text" id="filterFaculty" placeholder="Поиск">
+      </label>
+      <label class="filter filter-start">
+        Фильтр по году начала обучения:
+        <input class="search" type="text" id="filterStartStudy" placeholder="Поиск">
+      </label>
+      <label class="filter filter-end">
+        Фильтр по году окончания обучения:
+        <input class="search" type="text" id="filterEndStudy" placeholder="Поиск">
+      </label>
+    </form>
+
+    <div id="table-students-app"></div>
+
+    <form class="subform" action="" id="subform" method="post">
+      <fieldset class="fieldset">
+        <legend class="legend">Добавление студента</legend>
+        <div class="wrap">
+          <label for="name" class="label">Имя</label>
+          <input class="input" type="text" name="name" id="name" required>
+        </div>
+        <div class="wrap">
+          <label for="surname" class="label">Фамилия</label>
+          <input class="input" type="text" name="surname" id="surname" required>
+        </div>
+        <div class="wrap">
+          <label for="middleName" class="label">Отчество</label>
+          <input class="input" type="text" name="middleName" id="middleName" required>
+        </div>
+        <div class="wrap">
+          <label for="facultyForm" class="label">Факультет</label>
+          <input class="input" type="text" name="faculty" id="facultyForm" required>
+        </div>
+        <div class="wrap">
+          <label for="birthdayForm" class="label">Дата рождения</label>
+          <input class="input" type="date" name="birthday" id="birthdayForm" required>
+        </div>
+        <div class="wrap">
+          <label for="startStudyForm" class="label">Начало обучения</label>
+          <input class="input" type="text" name="startStudy" id="startStudyForm" required>
+        </div>
+        <div class="wrap">
+          <div class="error" id="error">Invalid Year!</div>
+          <input class="btn" type="submit" value="Добавить">
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</body>
+
+</html>
