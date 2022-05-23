@@ -1,4 +1,3 @@
-/* eslint-disable import/extensions */
 import Worker from './worker.js';
 
 const workers = [
