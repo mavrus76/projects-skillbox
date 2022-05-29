@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>CRM</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preload" href="fonts/open-sans-v18-latin_cyrillic-regular.woff2" as="font">
+  <link rel="preload" href="fonts/open-sans-v18-latin_cyrillic-600.woff2" as="font">
+  <link rel="preload" href="fonts/open-sans-v18-latin_cyrillic-700.woff2" as="font">
+  <link rel="stylesheet" href="css/choices.min.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/crm-app.js"></script>
+  <script defer src="lib/choices.min.js"></script>
+  <script defer src="lib/inputmask.min.js"></script>
+</head>
+
+<body>
+  <header class="header lock-padding" id="header">
+    <div class="header__wrap container">
+      <picture class="header__logo">
+        <source srcset="../img/logo-320.svg" type="image/svg+xml" media="(max-width: 500px)">
+        <source srcset="../img/logo.svg" type="image/svg+xml">
+        <img src="../img/logo.svg" alt="Логотип">
+      </picture>
+      <form class="header__form" id="filter" action="#" autocomplete="off">
+        <input class="header__search" id="search" type="text" placeholder="Введите запрос" autocomplete="off">
+      </form>
+    </div>
+  </header>
+
+  <section class="clients container" id="crm-app"></section>
+
+</body>
+
+</html>
